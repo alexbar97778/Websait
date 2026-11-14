@@ -130,15 +130,10 @@
         <!-- Custom Minimalist Architectural SVG Logo + Wordmark -->
         <a href="#" class="flex items-center gap-3.5 group focus:outline-none">
           <div class="w-11 h-11 rounded-xl bg-forest-800 flex items-center justify-center shadow-sm group-hover:bg-wood transition-colors duration-300">
-            <!-- Architectural Pergola, House & Trees Line Emblem inspired by draft -->
             <svg class="w-7 h-7 text-stone-50" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <!-- Roofline -->
               <path d="M7 17L20 7L33 17" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-              <!-- Pergola Beams -->
               <path d="M5 21H23M9 21V32M15 21V32M21 21V32" stroke="#C59B6D" stroke-width="1.8" stroke-linecap="round"/>
-              <!-- Deck Floor Line -->
               <path d="M4 32H36" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-              <!-- Minimalist Tree Silhouette -->
               <circle cx="30" cy="22" r="4.5" stroke="currentColor" stroke-width="1.6"/>
               <path d="M30 26.5V32" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
             </svg>
@@ -154,51 +149,68 @@
         </a>
 
         <!-- Desktop Navigation Links -->
-        <nav class="hidden lg:flex items-center gap-8 text-sm font-medium text-slate-700">
-          <a href="#services" class="hover:text-wood transition-colors py-2">Послуги</a>
-          <a href="#portfolio" class="hover:text-wood transition-colors py-2">Проекти</a>
-          <a href="#calculator" class="hover:text-wood transition-colors py-2">Калькулятор</a>
-          <a href="#process" class="hover:text-wood transition-colors py-2">Етапи роботи</a>
-          <a href="#contacts" class="hover:text-wood transition-colors py-2">Контакти</a>
+        <nav class="hidden lg:flex items-center gap-7 text-sm font-medium text-slate-700">
+          <a href="#services" data-i18n="nav_services" class="hover:text-wood transition-colors py-2">Послуги</a>
+          <a href="#portfolio" data-i18n="nav_portfolio" class="hover:text-wood transition-colors py-2">Проекти</a>
+          <a href="#calculator" data-i18n="nav_calculator" class="hover:text-wood transition-colors py-2">Калькулятор</a>
+          <a href="#process" data-i18n="nav_process" class="hover:text-wood transition-colors py-2">Етапи роботи</a>
+          <a href="#contacts" data-i18n="nav_contacts" class="hover:text-wood transition-colors py-2">Контакти</a>
         </nav>
 
-        <!-- Desktop Action Buttons -->
-        <div class="hidden sm:flex items-center gap-4">
+        <!-- Desktop Action Buttons & Language Switcher -->
+        <div class="hidden sm:flex items-center gap-3.5">
+          <!-- Language Switcher (UA / ES / EN) -->
+          <div class="flex items-center bg-stone-200/80 p-1 rounded-xl border border-stone-300/60" role="group" aria-label="Вибір мови">
+            <button type="button" data-lang="uk" class="lang-btn px-2.5 py-1 rounded-lg text-xs font-bold bg-forest-800 text-stone-50 transition-all">UA</button>
+            <button type="button" data-lang="es" class="lang-btn px-2.5 py-1 rounded-lg text-xs font-bold text-slate-700 hover:text-forest-800 transition-all">ES</button>
+            <button type="button" data-lang="en" class="lang-btn px-2.5 py-1 rounded-lg text-xs font-bold text-slate-700 hover:text-forest-800 transition-all">EN</button>
+          </div>
+
           <a href="tel:+380673106390" class="hidden xl:flex items-center gap-2 text-sm font-semibold text-forest-800 hover:text-wood transition-colors">
             <svg class="w-4 h-4 text-wood" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
             </svg>
             +38 (067) 310-63-90
           </a>
-          <a href="#calculator" class="px-5 py-2.5 rounded-xl bg-forest-800 text-stone-50 text-sm font-semibold hover:bg-wood transition-all duration-300 shadow-sm">
+
+          <a href="#calculator" data-i18n="nav_cta" class="px-5 py-2.5 rounded-xl bg-forest-800 text-stone-50 text-sm font-semibold hover:bg-wood transition-all duration-300 shadow-sm">
             Замовити прорахунок
           </a>
         </div>
 
-        <!-- Mobile Menu Button -->
-        <button id="mobile-menu-btn" aria-label="Відкрити меню" class="lg:hidden p-2.5 rounded-xl text-forest-800 hover:bg-stone-200/70 transition-colors">
-          <svg id="menu-icon-open" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-          </svg>
-          <svg id="menu-icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-          </svg>
-        </button>
+        <!-- Mobile Controls -->
+        <div class="flex items-center gap-2 lg:hidden">
+          <!-- Compact Mobile Language Switcher -->
+          <div class="flex sm:hidden items-center bg-stone-200/80 p-0.5 rounded-lg border border-stone-300/60">
+            <button type="button" data-lang="uk" class="lang-btn px-2 py-1 rounded-md text-[11px] font-bold bg-forest-800 text-stone-50">UA</button>
+            <button type="button" data-lang="es" class="lang-btn px-2 py-1 rounded-md text-[11px] font-bold text-slate-700">ES</button>
+            <button type="button" data-lang="en" class="lang-btn px-2 py-1 rounded-md text-[11px] font-bold text-slate-700">EN</button>
+          </div>
+
+          <button id="mobile-menu-btn" aria-label="Menu" class="p-2.5 rounded-xl text-forest-800 hover:bg-stone-200/70 transition-colors">
+            <svg id="menu-icon-open" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+            <svg id="menu-icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
       </div>
     </div>
 
     <!-- Mobile Dropdown Menu -->
     <div id="mobile-menu" class="hidden lg:hidden bg-stone-50 border-b border-stone-200 px-4 pt-3 pb-6 space-y-2 shadow-lg">
-      <a href="#services" class="mobile-link block px-4 py-3 rounded-xl text-base font-medium text-slate-900 hover:bg-stone-100">Послуги</a>
-      <a href="#portfolio" class="mobile-link block px-4 py-3 rounded-xl text-base font-medium text-slate-900 hover:bg-stone-100">Проекти</a>
-      <a href="#calculator" class="mobile-link block px-4 py-3 rounded-xl text-base font-medium text-slate-900 hover:bg-stone-100">Калькулятор вартості</a>
-      <a href="#process" class="mobile-link block px-4 py-3 rounded-xl text-base font-medium text-slate-900 hover:bg-stone-100">Етапи роботи</a>
-      <a href="#contacts" class="mobile-link block px-4 py-3 rounded-xl text-base font-medium text-slate-900 hover:bg-stone-100">Контакти</a>
+      <a href="#services" data-i18n="nav_services" class="mobile-link block px-4 py-3 rounded-xl text-base font-medium text-slate-900 hover:bg-stone-100">Послуги</a>
+      <a href="#portfolio" data-i18n="nav_portfolio" class="mobile-link block px-4 py-3 rounded-xl text-base font-medium text-slate-900 hover:bg-stone-100">Проекти</a>
+      <a href="#calculator" data-i18n="nav_calculator_full" class="mobile-link block px-4 py-3 rounded-xl text-base font-medium text-slate-900 hover:bg-stone-100">Калькулятор вартості</a>
+      <a href="#process" data-i18n="nav_process" class="mobile-link block px-4 py-3 rounded-xl text-base font-medium text-slate-900 hover:bg-stone-100">Етапи роботи</a>
+      <a href="#contacts" data-i18n="nav_contacts" class="mobile-link block px-4 py-3 rounded-xl text-base font-medium text-slate-900 hover:bg-stone-100">Контакти</a>
       <div class="pt-3 border-t border-stone-200 flex flex-col gap-3 px-2">
         <a href="tel:+380673106390" class="flex items-center justify-center gap-2 py-3 rounded-xl border border-stone-300 text-forest-800 font-semibold">
           +38 (067) 310-63-90
         </a>
-        <a href="#calculator" class="mobile-link text-center py-3 rounded-xl bg-forest-800 text-white font-semibold">
+        <a href="#calculator" data-i18n="nav_cta" class="mobile-link text-center py-3 rounded-xl bg-forest-800 text-white font-semibold">
           Замовити прорахунок
         </a>
       </div>
@@ -207,7 +219,6 @@
 
   <!-- ==================== HERO SECTION ==================== -->
   <section class="relative pt-28 pb-16 lg:pt-36 lg:pb-24 overflow-hidden">
-    <!-- Subtle Architectural Grid Background Accent -->
     <div class="absolute inset-0 pointer-events-none opacity-40" style="background-image: radial-gradient(#CFC9BD 1px, transparent 1px); background-size: 32px 32px;"></div>
 
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -217,26 +228,26 @@
         <div class="lg:col-span-6 space-y-6 reveal">
           <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-stone-200/80 border border-stone-300/60 text-xs font-semibold uppercase tracking-widest text-forest-800">
             <span class="w-2 h-2 rounded-full bg-wood"></span>
-            Архітектура заміського простору
+            <span data-i18n="hero_badge">Архітектура заміського простору</span>
           </div>
 
-          <h1 class="font-serif text-4xl sm:text-5xl xl:text-[56px] font-bold text-forest-800 leading-[1.12] tracking-tight">
+          <h1 data-i18n="hero_title" class="font-serif text-4xl sm:text-5xl xl:text-[56px] font-bold text-forest-800 leading-[1.12] tracking-tight">
             ПРОЕКТУВАННЯ, БУДІВНИЦТВО ТЕРАС ТА <span class="italic text-wood-dark">ЛАНДШАФТНИЙ ДИЗАЙН</span>
           </h1>
 
-          <p class="text-base sm:text-lg text-slate-700 leading-relaxed max-w-xl">
+          <p data-i18n="hero_subtitle" class="text-base sm:text-lg text-slate-700 leading-relaxed max-w-xl">
             Створюємо естетичні та довговічні простори для відпочинку під ключ: тераси з преміального ДПК та термодерева, безрамні скляні огорожі, архітектурні перголи та гармонійний ландшафт вашої ділянки.
           </p>
 
           <!-- Primary CTA Buttons -->
           <div class="flex flex-col sm:flex-row gap-4 pt-2">
             <a href="#calculator" class="inline-flex items-center justify-center gap-2.5 px-7 py-4 rounded-2xl bg-forest-800 text-stone-50 font-semibold text-base hover:bg-wood transition-all duration-300 shadow-soft group">
-              <span>Розрахувати вартість</span>
+              <span data-i18n="hero_btn_calc">Розрахувати вартість</span>
               <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg>
             </a>
-            <a href="#portfolio" class="inline-flex items-center justify-center gap-2.5 px-7 py-4 rounded-2xl bg-white border border-stone-300 text-forest-800 font-semibold text-base hover:border-forest-800 transition-all duration-300">
+            <a href="#portfolio" data-i18n="hero_btn_portfolio" class="inline-flex items-center justify-center gap-2.5 px-7 py-4 rounded-2xl bg-white border border-stone-300 text-forest-800 font-semibold text-base hover:border-forest-800 transition-all duration-300">
               Переглянути портфоліо
             </a>
           </div>
@@ -245,26 +256,26 @@
           <div class="grid grid-cols-3 gap-4 pt-6 border-t border-stone-200 max-w-lg">
             <div>
               <p class="font-serif text-3xl font-bold text-forest-800">75+</p>
-              <p class="text-xs sm:text-sm text-slate-500 mt-0.5">Реалізованих терас</p>
+              <p data-i18n="metric_1" class="text-xs sm:text-sm text-slate-500 mt-0.5">Реалізованих терас</p>
             </div>
             <div>
-              <p class="font-serif text-3xl font-bold text-forest-800">5 років</p>
-              <p class="text-xs sm:text-sm text-slate-500 mt-0.5">Гарантія на настил</p>
+              <p data-i18n="metric_2_val" class="font-serif text-3xl font-bold text-forest-800">5 років</p>
+              <p data-i18n="metric_2" class="text-xs sm:text-sm text-slate-500 mt-0.5">Гарантія на настил</p>
             </div>
             <div>
               <p class="font-serif text-3xl font-bold text-forest-800">3D</p>
-              <p class="text-xs sm:text-sm text-slate-500 mt-0.5">Проект до початку робіт</p>
+              <p data-i18n="metric_3" class="text-xs sm:text-sm text-slate-500 mt-0.5">Проект до початку робіт</p>
             </div>
           </div>
         </div>
 
-        <!-- Right Visual Showcase (Reflecting the Lakeside Composite Deck & Glass Railings from the Draft) -->
+        <!-- Right Visual Showcase -->
         <div class="lg:col-span-6 reveal">
           <div class="relative rounded-3xl overflow-hidden shadow-2xl bg-forest-800 aspect-[4/3] sm:aspect-[16/12] group">
             <img
               src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1400&q=85"
               onerror="this.onerror=null;this.src='https://placehold.co/1200x900/1C2520/F8F7F4?text=ALEXBAR+Terrace+%26+Glass+Railings';"
-              alt="Тераса з композитної дошки зі скляними огорожами та видом на природу"
+              alt="Terrace with glass railings"
               class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
             />
             <div class="absolute inset-0 bg-gradient-to-t from-forest-900/80 via-forest-900/20 to-transparent"></div>
@@ -272,11 +283,11 @@
             <!-- Floating Architectural Spec Card -->
             <div class="absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 sm:right-6 glass-dark border border-white/15 rounded-2xl p-4 sm:p-5 text-stone-50 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
               <div>
-                <span class="text-[11px] uppercase tracking-widest text-wood-light font-semibold">Флагманський об'єкт</span>
-                <h3 class="font-serif text-xl sm:text-2xl font-semibold mt-0.5">Панорамна тераса біля водойми</h3>
-                <p class="text-xs text-stone-300 mt-1">ДПК терасна дошка + загартоване скло на чорних стійках</p>
+                <span data-i18n="hero_card_tag" class="text-[11px] uppercase tracking-widest text-wood-light font-semibold">Флагманський об'єкт</span>
+                <h3 data-i18n="hero_card_title" class="font-serif text-xl sm:text-2xl font-semibold mt-0.5">Панорамна тераса біля водойми</h3>
+                <p data-i18n="hero_card_desc" class="text-xs text-stone-300 mt-1">ДПК терасна дошка + загартоване скло на чорних стійках</p>
               </div>
-              <a href="#portfolio" class="shrink-0 px-4 py-2.5 rounded-xl bg-wood hover:bg-wood-light text-white text-xs font-semibold uppercase tracking-wider text-center transition-colors">
+              <a href="#portfolio" data-i18n="hero_card_btn" class="shrink-0 px-4 py-2.5 rounded-xl bg-wood hover:bg-wood-light text-white text-xs font-semibold uppercase tracking-wider text-center transition-colors">
                 Детальніше
               </a>
             </div>
@@ -287,17 +298,16 @@
     </div>
   </section>
 
-  <!-- ==================== SERVICES SECTION (НАШІ ПОСЛУГИ) ==================== -->
+  <!-- ==================== SERVICES SECTION ==================== -->
   <section id="services" class="py-20 lg:py-28 bg-stone-100/80 border-y border-stone-200/70">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
-      <!-- Section Header -->
       <div class="max-w-3xl reveal">
-        <span class="text-xs font-bold uppercase tracking-[0.2em] text-wood-dark">Комплексний підхід</span>
-        <h2 class="font-serif text-3xl sm:text-5xl font-bold text-forest-800 mt-2">
+        <span data-i18n="srv_tag" class="text-xs font-bold uppercase tracking-[0.2em] text-wood-dark">Комплексний підхід</span>
+        <h2 data-i18n="srv_title" class="font-serif text-3xl sm:text-5xl font-bold text-forest-800 mt-2">
           Наші послуги
         </h2>
-        <p class="text-slate-700 text-base sm:text-lg mt-4 leading-relaxed">
+        <p data-i18n="srv_subtitle" class="text-slate-700 text-base sm:text-lg mt-4 leading-relaxed">
           Виконуємо повний цикл робіт — від геодезичної прив'язки та 3D-візуалізації до монтажу складних інженерних конструкцій та фінішного озеленення.
         </p>
       </div>
@@ -313,17 +323,17 @@
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M14 10l-2 1m0 0l-2-1m2 1v2.5M20 7l-2 1m2-1l-2-1m2 1v2.5M14 4l-2-1-2 1M4 7l2-1M4 7l2 1M4 7v2.5M12 21l-2-1m2 1l2-1m-2 1v-2.5M6 18l-2-1v-2.5M18 18l2-1v-2.5" />
               </svg>
             </div>
-            <span class="text-xs font-semibold text-wood-dark uppercase tracking-wider">01 / Архітектура</span>
-            <h3 class="font-serif text-2xl font-bold text-forest-800 mt-1.5">
+            <span data-i18n="srv1_tag" class="text-xs font-semibold text-wood-dark uppercase tracking-wider">01 / Архітектура</span>
+            <h3 data-i18n="srv1_title" class="font-serif text-2xl font-bold text-forest-800 mt-1.5">
               Проектування терас та пергол
             </h3>
-            <p class="text-sm text-slate-600 mt-3 leading-relaxed">
+            <p data-i18n="srv1_desc" class="text-sm text-slate-600 mt-3 leading-relaxed">
               Фотореалістична 3D-візуалізація, креслення металокаркасу та вузлів кріплення, інженерний розрахунок навантажень під особливості рельєфу.
             </p>
           </div>
           <div class="pt-6 mt-6 border-t border-stone-100 flex items-center justify-between text-xs font-semibold text-forest-800">
-            <span>Термін: 5–10 днів</span>
-            <a href="#contacts" class="text-wood-dark hover:underline">Замовити →</a>
+            <span data-i18n="srv1_meta">Термін: 5–10 днів</span>
+            <a href="#contacts" data-i18n="srv1_link" class="text-wood-dark hover:underline">Замовити →</a>
           </div>
         </div>
 
@@ -335,17 +345,17 @@
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
               </svg>
             </div>
-            <span class="text-xs font-semibold text-wood-dark uppercase tracking-wider">02 / Будівництво</span>
-            <h3 class="font-serif text-2xl font-bold text-forest-800 mt-1.5">
+            <span data-i18n="srv2_tag" class="text-xs font-semibold text-wood-dark uppercase tracking-wider">02 / Будівництво</span>
+            <h3 data-i18n="srv2_title" class="font-serif text-2xl font-bold text-forest-800 mt-1.5">
               Будівництво терас під ключ
             </h3>
-            <p class="text-sm text-slate-600 mt-3 leading-relaxed">
+            <p data-i18n="srv2_desc" class="text-sm text-slate-600 mt-3 leading-relaxed">
               Монтаж терасної дошки ДПК, термоясеня та модрини на регульованих опорах або металокаркасі. Встановлення скляних та металевих огорож.
             </p>
           </div>
           <div class="pt-6 mt-6 border-t border-stone-100 flex items-center justify-between text-xs font-semibold text-forest-800">
-            <span>Гарантія до 15 років</span>
-            <a href="#calculator" class="text-wood-dark hover:underline">Прорахувати →</a>
+            <span data-i18n="srv2_meta">Гарантія до 15 років</span>
+            <a href="#calculator" data-i18n="srv2_link" class="text-wood-dark hover:underline">Прорахувати →</a>
           </div>
         </div>
 
@@ -357,17 +367,17 @@
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
               </svg>
             </div>
-            <span class="text-xs font-semibold text-wood-dark uppercase tracking-wider">03 / Природа</span>
-            <h3 class="font-serif text-2xl font-bold text-forest-800 mt-1.5">
+            <span data-i18n="srv3_tag" class="text-xs font-semibold text-wood-dark uppercase tracking-wider">03 / Природа</span>
+            <h3 data-i18n="srv3_title" class="font-serif text-2xl font-bold text-forest-800 mt-1.5">
               Ландшафтний дизайн
             </h3>
-            <p class="text-sm text-slate-600 mt-3 leading-relaxed">
+            <p data-i18n="srv3_desc" class="text-sm text-slate-600 mt-3 leading-relaxed">
               Комплексне озеленення, висадка крупномірів, рулонний газон, проектування систем автоматичного поливу та сценаріїв ландшафтного освітлення.
             </p>
           </div>
           <div class="pt-6 mt-6 border-t border-stone-100 flex items-center justify-between text-xs font-semibold text-forest-800">
-            <span>Індивідуальний дендроплан</span>
-            <a href="#contacts" class="text-wood-dark hover:underline">Консультація →</a>
+            <span data-i18n="srv3_meta">Індивідуальний дендроплан</span>
+            <a href="#contacts" data-i18n="srv3_link" class="text-wood-dark hover:underline">Консультація →</a>
           </div>
         </div>
 
@@ -379,17 +389,17 @@
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z" />
               </svg>
             </div>
-            <span class="text-xs font-semibold text-wood-dark uppercase tracking-wider">04 / Comfort Zone</span>
-            <h3 class="font-serif text-2xl font-bold text-forest-800 mt-1.5">
+            <span data-i18n="srv4_tag" class="text-xs font-semibold text-wood-dark uppercase tracking-wider">04 / Comfort Zone</span>
+            <h3 data-i18n="srv4_title" class="font-serif text-2xl font-bold text-forest-800 mt-1.5">
               Облаштування зон відпочинку
             </h3>
-            <p class="text-sm text-slate-600 mt-3 leading-relaxed">
+            <p data-i18n="srv4_desc" class="text-sm text-slate-600 mt-3 leading-relaxed">
               Біокліматичні перголи з поворотними ламелями, сучасні літні кухні, барбекю-комплекси та затишні вогнищеві зони (fire-pit).
             </p>
           </div>
           <div class="pt-6 mt-6 border-t border-stone-100 flex items-center justify-between text-xs font-semibold text-forest-800">
-            <span>Під ключ з меблями</span>
-            <a href="#contacts" class="text-wood-dark hover:underline">Детальніше →</a>
+            <span data-i18n="srv4_meta">Під ключ з меблями</span>
+            <a href="#contacts" data-i18n="srv4_link" class="text-wood-dark hover:underline">Детальніше →</a>
           </div>
         </div>
 
@@ -401,54 +411,50 @@
   <section id="portfolio" class="py-20 lg:py-28">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
-      <!-- Header + Filter Tabs -->
       <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 reveal">
         <div>
-          <span class="text-xs font-bold uppercase tracking-[0.2em] text-wood-dark">Портфоліо студії</span>
-          <h2 class="font-serif text-3xl sm:text-5xl font-bold text-forest-800 mt-2">
+          <span data-i18n="port_tag" class="text-xs font-bold uppercase tracking-[0.2em] text-wood-dark">Портфоліо студії</span>
+          <h2 data-i18n="port_title" class="font-serif text-3xl sm:text-5xl font-bold text-forest-800 mt-2">
             Реалізовані проекти
           </h2>
         </div>
 
         <!-- Category Filter Buttons -->
         <div id="portfolio-filters" class="flex flex-wrap gap-2">
-          <button data-filter="all" class="filter-btn active px-5 py-2.5 rounded-xl text-sm font-semibold bg-forest-800 text-stone-50 transition-all">
+          <button data-filter="all" data-i18n="flt_all" class="filter-btn active px-5 py-2.5 rounded-xl text-sm font-semibold bg-forest-800 text-stone-50 transition-all">
             Всі проекти
           </button>
-          <button data-filter="glass" class="filter-btn px-5 py-2.5 rounded-xl text-sm font-semibold bg-stone-200/70 text-slate-700 hover:bg-stone-200 transition-all">
+          <button data-filter="glass" data-i18n="flt_glass" class="filter-btn px-5 py-2.5 rounded-xl text-sm font-semibold bg-stone-200/70 text-slate-700 hover:bg-stone-200 transition-all">
             Тераси зі склом
           </button>
-          <button data-filter="landscape" class="filter-btn px-5 py-2.5 rounded-xl text-sm font-semibold bg-stone-200/70 text-slate-700 hover:bg-stone-200 transition-all">
+          <button data-filter="landscape" data-i18n="flt_landscape" class="filter-btn px-5 py-2.5 rounded-xl text-sm font-semibold bg-stone-200/70 text-slate-700 hover:bg-stone-200 transition-all">
             Ландшафт
           </button>
-          <button data-filter="pergola" class="filter-btn px-5 py-2.5 rounded-xl text-sm font-semibold bg-stone-200/70 text-slate-700 hover:bg-stone-200 transition-all">
+          <button data-filter="pergola" data-i18n="flt_pergola" class="filter-btn px-5 py-2.5 rounded-xl text-sm font-semibold bg-stone-200/70 text-slate-700 hover:bg-stone-200 transition-all">
             Перголи
           </button>
         </div>
       </div>
 
       <!-- Projects Grid -->
-      <div id="projects-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
-        <!-- Populated dynamically via JS for filtering & modal inspection -->
-      </div>
+      <div id="projects-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12"></div>
 
     </div>
   </section>
 
-  <!-- ==================== INTERACTIVE TERRACE COST CALCULATOR ==================== -->
+  <!-- ==================== INTERACTIVE TERRACE COST CALCULATOR (€) ==================== -->
   <section id="calculator" class="py-20 lg:py-28 bg-forest-800 text-stone-50 relative overflow-hidden">
-    <!-- Subtle Decorative Circle -->
     <div class="absolute -top-40 -right-40 w-96 h-96 rounded-full bg-wood/10 blur-3xl pointer-events-none"></div>
     <div class="absolute -bottom-40 -left-40 w-96 h-96 rounded-full bg-forest-600/30 blur-3xl pointer-events-none"></div>
 
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       <div class="max-w-3xl mb-12 reveal">
-        <span class="text-xs font-bold uppercase tracking-[0.2em] text-wood-light">Онлайн-розрахунок</span>
-        <h2 class="font-serif text-3xl sm:text-5xl font-bold text-white mt-2">
+        <span data-i18n="calc_tag" class="text-xs font-bold uppercase tracking-[0.2em] text-wood-light">Онлайн-розрахунок</span>
+        <h2 data-i18n="calc_title" class="font-serif text-3xl sm:text-5xl font-bold text-white mt-2">
           Калькулятор вартості тераси
         </h2>
-        <p class="text-stone-300 text-base sm:text-lg mt-3">
-          Оберіть бажані параметри тераси, щоб миттєво дізнатися орієнтовний бюджет будівництва під ключ з урахуванням матеріалів та монтажу.
+        <p data-i18n="calc_subtitle" class="text-stone-300 text-base sm:text-lg mt-3">
+          Оберіть бажані параметри тераси, щоб миттєво дізнатися орієнтовний бюджет будівництва під ключ у євро (€) з урахуванням матеріалів та монтажу.
         </p>
       </div>
 
@@ -460,7 +466,7 @@
           <!-- 1. Area Slider -->
           <div>
             <div class="flex items-center justify-between mb-3">
-              <label for="area-slider" class="text-sm font-bold uppercase tracking-wider text-forest-800">
+              <label for="area-slider" data-i18n="calc_step1" class="text-sm font-bold uppercase tracking-wider text-forest-800">
                 1. Площа тераси
               </label>
               <div class="px-4 py-1.5 rounded-xl bg-forest-800 text-stone-50 font-serif text-2xl font-bold">
@@ -469,85 +475,85 @@
             </div>
             <input id="area-slider" type="range" min="10" max="150" value="42" step="1" class="w-full" />
             <div class="flex justify-between text-xs text-slate-500 mt-2 font-medium">
-              <span>10 м² (компактна)</span>
-              <span>80 м² (середня)</span>
-              <span>150 м² (резиденція)</span>
+              <span data-i18n="calc_area_min">10 м² (компактна)</span>
+              <span data-i18n="calc_area_mid">80 м² (середня)</span>
+              <span data-i18n="calc_area_max">150 м² (резиденція)</span>
             </div>
           </div>
 
           <!-- 2. Decking Material -->
           <div>
-            <label class="block text-sm font-bold uppercase tracking-wider text-forest-800 mb-3">
+            <label data-i18n="calc_step2" class="block text-sm font-bold uppercase tracking-wider text-forest-800 mb-3">
               2. Матеріал терасного настилу
             </label>
             <div class="grid grid-cols-1 sm:grid-cols-3 gap-3" id="material-options">
-              <button type="button" data-price="235" data-name="ДПК Композит" class="calc-material active text-left p-4 rounded-2xl border-2 border-forest-800 bg-stone-100 transition-all">
-                <p class="font-bold text-forest-800 text-sm">ДПК Композит</p>
-                <p class="text-xs text-slate-500 mt-1">Не потребує догляду</p>
-                <p class="text-xs font-semibold text-wood-dark mt-2">від $235 / м²</p>
+              <button type="button" data-price="235" data-mat-key="mat_wpc" class="calc-material active text-left p-4 rounded-2xl border-2 border-forest-800 bg-stone-100 transition-all">
+                <p data-i18n="mat_wpc_name" class="font-bold text-forest-800 text-sm">ДПК Композит</p>
+                <p data-i18n="mat_wpc_desc" class="text-xs text-slate-500 mt-1">Не потребує догляду</p>
+                <p data-i18n="mat_wpc_price" class="text-xs font-semibold text-wood-dark mt-2">від €235 / м²</p>
               </button>
-              <button type="button" data-price="295" data-name="Термоясен" class="calc-material text-left p-4 rounded-2xl border-2 border-stone-200 bg-white hover:border-stone-300 transition-all">
-                <p class="font-bold text-forest-800 text-sm">Термоясен</p>
-                <p class="text-xs text-slate-500 mt-1">Натуральна текстура</p>
-                <p class="text-xs font-semibold text-wood-dark mt-2">від $295 / м²</p>
+              <button type="button" data-price="295" data-mat-key="mat_ash" class="calc-material text-left p-4 rounded-2xl border-2 border-stone-200 bg-white hover:border-stone-300 transition-all">
+                <p data-i18n="mat_ash_name" class="font-bold text-forest-800 text-sm">Термоясен</p>
+                <p data-i18n="mat_ash_desc" class="text-xs text-slate-500 mt-1">Натуральна текстура</p>
+                <p data-i18n="mat_ash_price" class="text-xs font-semibold text-wood-dark mt-2">від €295 / м²</p>
               </button>
-              <button type="button" data-price="195" data-name="Модрина" class="calc-material text-left p-4 rounded-2xl border-2 border-stone-200 bg-white hover:border-stone-300 transition-all">
-                <p class="font-bold text-forest-800 text-sm">Модрина</p>
-                <p class="text-xs text-slate-500 mt-1">Класична деревина</p>
-                <p class="text-xs font-semibold text-wood-dark mt-2">від $195 / м²</p>
+              <button type="button" data-price="195" data-mat-key="mat_larch" class="calc-material text-left p-4 rounded-2xl border-2 border-stone-200 bg-white hover:border-stone-300 transition-all">
+                <p data-i18n="mat_larch_name" class="font-bold text-forest-800 text-sm">Модрина</p>
+                <p data-i18n="mat_larch_desc" class="text-xs text-slate-500 mt-1">Класична деревина</p>
+                <p data-i18n="mat_larch_price" class="text-xs font-semibold text-wood-dark mt-2">від €195 / м²</p>
               </button>
             </div>
           </div>
 
           <!-- 3. Railing Type -->
           <div>
-            <label class="block text-sm font-bold uppercase tracking-wider text-forest-800 mb-3">
+            <label data-i18n="calc_step3" class="block text-sm font-bold uppercase tracking-wider text-forest-800 mb-3">
               3. Тип огорожі периметру
             </label>
             <div class="grid grid-cols-1 sm:grid-cols-3 gap-3" id="railing-options">
-              <button type="button" data-price="0" data-name="Без огорожі" class="calc-railing text-left p-4 rounded-2xl border-2 border-stone-200 bg-white hover:border-stone-300 transition-all">
-                <p class="font-bold text-forest-800 text-sm">Без огорожі</p>
-                <p class="text-xs text-slate-500 mt-1">В рівень з газоном</p>
-                <p class="text-xs font-semibold text-slate-500 mt-2">+$0</p>
+              <button type="button" data-price="0" data-rail-key="rail_none" class="calc-railing text-left p-4 rounded-2xl border-2 border-stone-200 bg-white hover:border-stone-300 transition-all">
+                <p data-i18n="rail_none_name" class="font-bold text-forest-800 text-sm">Без огорожі</p>
+                <p data-i18n="rail_none_desc" class="text-xs text-slate-500 mt-1">В рівень з газоном</p>
+                <p class="text-xs font-semibold text-slate-500 mt-2">+€0</p>
               </button>
-              <button type="button" data-price="315" data-name="Скляна на чорних стійках" class="calc-railing active text-left p-4 rounded-2xl border-2 border-forest-800 bg-stone-100 transition-all">
-                <p class="font-bold text-forest-800 text-sm">Скляна огорожа</p>
-                <p class="text-xs text-slate-500 mt-1">Загартоване скло 10 мм</p>
-                <p class="text-xs font-semibold text-wood-dark mt-2">+$315 / м² площі</p>
+              <button type="button" data-price="315" data-rail-key="rail_glass" class="calc-railing active text-left p-4 rounded-2xl border-2 border-forest-800 bg-stone-100 transition-all">
+                <p data-i18n="rail_glass_name" class="font-bold text-forest-800 text-sm">Скляна огорожа</p>
+                <p data-i18n="rail_glass_desc" class="text-xs text-slate-500 mt-1">Загартоване скло 10 мм</p>
+                <p data-i18n="rail_glass_price" class="text-xs font-semibold text-wood-dark mt-2">+€315 / м² площі</p>
               </button>
-              <button type="button" data-price="285" data-name="Металевий лофт" class="calc-railing text-left p-4 rounded-2xl border-2 border-stone-200 bg-white hover:border-stone-300 transition-all">
-                <p class="font-bold text-forest-800 text-sm">Металевий лофт</p>
-                <p class="text-xs text-slate-500 mt-1">Алюмінієва огорожа (порошкове фарбування)</p>
-                <p class="text-xs font-semibold text-wood-dark mt-2">+$285 / м² площі</p>
+              <button type="button" data-price="285" data-rail-key="rail_loft" class="calc-railing text-left p-4 rounded-2xl border-2 border-stone-200 bg-white hover:border-stone-300 transition-all">
+                <p data-i18n="rail_loft_name" class="font-bold text-forest-800 text-sm">Металевий лофт</p>
+                <p data-i18n="rail_loft_desc" class="text-xs text-slate-500 mt-1">Алюмінієва огорожа (порошкове фарбування)</p>
+                <p data-i18n="rail_loft_price" class="text-xs font-semibold text-wood-dark mt-2">+€285 / м² площі</p>
               </button>
             </div>
           </div>
 
           <!-- 4. Extra Options -->
           <div>
-            <label class="block text-sm font-bold uppercase tracking-wider text-forest-800 mb-3">
+            <label data-i18n="calc_step4" class="block text-sm font-bold uppercase tracking-wider text-forest-800 mb-3">
               4. Додаткові опції
             </label>
             <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
               <label class="flex items-start gap-3 p-3.5 rounded-2xl border border-stone-200 bg-white cursor-pointer hover:border-wood transition-colors">
-                <input type="checkbox" value="1410" data-label="Сходи" class="calc-extra mt-1 w-4 h-4 accent-forest-800 rounded" checked />
+                <input type="checkbox" value="1410" data-extra-key="ext_stairs" class="calc-extra mt-1 w-4 h-4 accent-forest-800 rounded" checked />
                 <div>
-                  <span class="block text-sm font-bold text-forest-800">Сходи (до 10 сходинок)</span>
-                  <span class="block text-xs text-slate-500">+$1410</span>
+                  <span data-i18n="ext_stairs_name" class="block text-sm font-bold text-forest-800">Сходи (до 10 сходинок)</span>
+                  <span class="block text-xs text-slate-500">+€1410</span>
                 </div>
               </label>
               <label class="flex items-start gap-3 p-3.5 rounded-2xl border border-stone-200 bg-white cursor-pointer hover:border-wood transition-colors">
-                <input type="checkbox" value="480" data-label="LED-підсвітка" class="calc-extra mt-1 w-4 h-4 accent-forest-800 rounded" />
+                <input type="checkbox" value="480" data-extra-key="ext_led" class="calc-extra mt-1 w-4 h-4 accent-forest-800 rounded" />
                 <div>
-                  <span class="block text-sm font-bold text-forest-800">LED-підсвітка</span>
-                  <span class="block text-xs text-slate-500">+$480</span>
+                  <span data-i18n="ext_led_name" class="block text-sm font-bold text-forest-800">LED-підсвітка</span>
+                  <span class="block text-xs text-slate-500">+€480</span>
                 </div>
               </label>
               <label class="flex items-start gap-3 p-3.5 rounded-2xl border border-stone-200 bg-white cursor-pointer hover:border-wood transition-colors">
-                <input type="checkbox" value="4540" data-label="Пергола" class="calc-extra mt-1 w-4 h-4 accent-forest-800 rounded" />
+                <input type="checkbox" value="4540" data-extra-key="ext_pergola" class="calc-extra mt-1 w-4 h-4 accent-forest-800 rounded" />
                 <div>
-                  <span class="block text-sm font-bold text-forest-800">Пергола (до 10 м²)</span>
-                  <span class="block text-xs text-slate-500">+$4540</span>
+                  <span data-i18n="ext_pergola_name" class="block text-sm font-bold text-forest-800">Пергола (до 10 м²)</span>
+                  <span class="block text-xs text-slate-500">+€4540</span>
                 </div>
               </label>
             </div>
@@ -557,47 +563,48 @@
 
         <!-- Summary & Lead Capture Card -->
         <div class="lg:col-span-5 bg-forest-700/80 border border-white/15 rounded-3xl p-6 sm:p-8 lg:p-10 backdrop-blur-md reveal">
-          <span class="text-xs uppercase tracking-widest text-wood-light font-semibold">Ваш попередній кошторис</span>
+          <span data-i18n="sum_tag" class="text-xs uppercase tracking-widest text-wood-light font-semibold">Ваш попередній кошторис</span>
           
           <div class="mt-4 pb-6 border-b border-white/15">
-            <p class="text-sm text-stone-300">Орієнтовна вартість під ключ:</p>
+            <p data-i18n="sum_label" class="text-sm text-stone-300">Орієнтовна вартість під ключ:</p>
             <div class="flex items-baseline gap-2 mt-1">
-              <span id="total-price" class="font-serif text-5xl sm:text-6xl font-bold text-white">$7 370</span>
-              <span class="text-xs text-stone-300">(матеріали + робота)</span>
+              <span id="total-price" class="font-serif text-5xl sm:text-6xl font-bold text-white">€24 510</span>
+              <span data-i18n="sum_note" class="text-xs text-stone-300">(матеріали + робота)</span>
             </div>
           </div>
 
           <!-- Selected Spec Breakdown -->
           <ul class="space-y-3 py-6 text-sm text-stone-200 border-b border-white/15">
             <li class="flex justify-between">
-              <span class="text-stone-400">Площа настилу:</span>
+              <span data-i18n="sum_area_lbl" class="text-stone-400">Площа настилу:</span>
               <span id="summary-area" class="font-semibold text-white">42 м²</span>
             </li>
             <li class="flex justify-between">
-              <span class="text-stone-400">Матеріал дошки:</span>
+              <span data-i18n="sum_mat_lbl" class="text-stone-400">Матеріал дошки:</span>
               <span id="summary-material" class="font-semibold text-white">ДПК Композит</span>
             </li>
             <li class="flex justify-between">
-              <span class="text-stone-400">Огорожа:</span>
+              <span data-i18n="sum_rail_lbl" class="text-stone-400">Огорожа:</span>
               <span id="summary-railing" class="font-semibold text-white">Скляна на чорних стійках</span>
             </li>
             <li class="flex justify-between">
-              <span class="text-stone-400">Додатково:</span>
-              <span id="summary-extras" class="font-semibold text-white text-right max-w-[60%]">Сходи</span>
+              <span data-i18n="sum_ext_lbl" class="text-stone-400">Опції:</span>
+              <span id="summary-extras" class="font-semibold text-white text-right">Сходи</span>
             </li>
           </ul>
 
-          <!-- Quick Submit Configuration Form -->
-          <form id="calc-form" class="mt-6 space-y-4">
-            <p class="text-xs text-stone-300">
-              Залиште контакти — ми підготуємо точний детальний кошторис та безкоштовний 3D-ескіз під вашу ділянку:
-            </p>
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-              <input type="text" id="calc-name" required placeholder="Ваше ім'я" class="w-full px-4 py-3 rounded-xl bg-forest-900/70 border border-white/20 text-white placeholder-stone-400 text-sm focus:outline-none focus:border-wood-light" />
-              <input type="tel" id="calc-phone" required placeholder="+38 (0__) ___-__-__" class="w-full px-4 py-3 rounded-xl bg-forest-900/70 border border-white/20 text-white placeholder-stone-400 text-sm focus:outline-none focus:border-wood-light" />
-            </div>
-            <button type="submit" class="w-full py-4 rounded-xl bg-wood hover:bg-wood-light text-white font-semibold text-sm uppercase tracking-wider transition-all duration-300 shadow-lg">
-              Отримати точний розрахунок
+          <!-- Mini Form to lock price -->
+          <form id="calc-lead-form" class="mt-6 space-y-3.5">
+            <p data-i18n="sum_form_desc" class="text-xs text-stone-300">Залиште номер телефону, щоб зафіксувати кошторис та отримати безкоштовний замір ділянки:</p>
+            <input
+              type="tel"
+              required
+              data-i18n-placeholder="ph_phone"
+              placeholder="+38 (0__) ___-__-__"
+              class="w-full px-4 py-3.5 rounded-xl bg-forest-900/80 border border-white/20 text-white placeholder-stone-400 text-sm focus:outline-none focus:border-wood-light"
+            />
+            <button type="submit" data-i18n="sum_submit" class="w-full py-4 rounded-xl bg-wood hover:bg-wood-light text-white font-semibold text-sm uppercase tracking-wider transition-colors shadow-lg">
+              Отримати точний кошторис
             </button>
           </form>
         </div>
@@ -606,212 +613,152 @@
     </div>
   </section>
 
-  <!-- ==================== PROCESS & ADVANTAGES (ЕТАПИ СПІВПРАЦІ) ==================== -->
+  <!-- ==================== WORK PROCESS SECTION ==================== -->
   <section id="process" class="py-20 lg:py-28 bg-stone-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
-      <div class="text-center max-w-3xl mx-auto reveal">
-        <span class="text-xs font-bold uppercase tracking-[0.2em] text-wood-dark">Прозорість на кожному кроці</span>
-        <h2 class="font-serif text-3xl sm:text-5xl font-bold text-forest-800 mt-2">
-          Етапи співпраці та гарантії
+      <div class="text-center max-w-2xl mx-auto reveal">
+        <span data-i18n="proc_tag" class="text-xs font-bold uppercase tracking-[0.2em] text-wood-dark">Прозорість на кожному кроці</span>
+        <h2 data-i18n="proc_title" class="font-serif text-3xl sm:text-5xl font-bold text-forest-800 mt-2">
+          Як ми працюємо
         </h2>
-        <p class="text-slate-700 text-base sm:text-lg mt-4">
-          Чіткий регламент робіт, фіксована вартість у договорі та власні монтажні бригади забезпечують бездоганний результат в обумовлені терміни.
-        </p>
       </div>
 
-      <!-- 4-Step Timeline -->
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-14">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mt-14">
         
         <!-- Step 1 -->
-        <div class="relative bg-white rounded-3xl p-7 border border-stone-200/80 shadow-card reveal">
-          <div class="flex items-center justify-between mb-6">
-            <span class="font-serif text-4xl font-bold text-wood">01</span>
-            <span class="px-3 py-1 rounded-full bg-stone-100 text-xs font-semibold text-forest-800">День 1–2</span>
-          </div>
-          <h3 class="font-serif text-2xl font-bold text-forest-800">Виїзд та заміри</h3>
-          <p class="text-sm text-slate-600 mt-3 leading-relaxed">
-            Інженер-архітектор виїжджає на ділянку, оцінює перепади висот, ґрунт та привозить зразки терасної дошки і скла.
+        <div class="relative p-7 rounded-3xl bg-white border border-stone-200/80 shadow-card reveal">
+          <span class="font-serif text-5xl font-bold text-stone-200 select-none">01</span>
+          <h3 data-i18n="proc1_title" class="font-serif text-2xl font-bold text-forest-800 mt-3">Виїзд та замір</h3>
+          <p data-i18n="proc1_desc" class="text-sm text-slate-600 mt-2.5 leading-relaxed">
+            Інженер приїжджає на об'єкт зі зразками дошки, оцінює ґрунти, перепади висот та фіксує ваші побажання.
           </p>
         </div>
 
         <!-- Step 2 -->
-        <div class="relative bg-white rounded-3xl p-7 border border-stone-200/80 shadow-card reveal">
-          <div class="flex items-center justify-between mb-6">
-            <span class="font-serif text-4xl font-bold text-wood">02</span>
-            <span class="px-3 py-1 rounded-full bg-stone-100 text-xs font-semibold text-forest-800">День 3–7</span>
-          </div>
-          <h3 class="font-serif text-2xl font-bold text-forest-800">3D-проект та кошторис</h3>
-          <p class="text-sm text-slate-600 mt-3 leading-relaxed">
-            Розробляємо 3D-візуалізацію майбутньої тераси та ландшафту, затверджуємо специфікацію матеріалів та фіксуємо бюджет.
+        <div class="relative p-7 rounded-3xl bg-white border border-stone-200/80 shadow-card reveal">
+          <span class="font-serif text-5xl font-bold text-stone-200 select-none">02</span>
+          <h3 data-i18n="proc2_title" class="font-serif text-2xl font-bold text-forest-800 mt-3">3D-проект і кошторис</h3>
+          <p data-i18n="proc2_desc" class="text-sm text-slate-600 mt-2.5 leading-relaxed">
+            Розробляємо архітектурну візуалізацію, узгоджуємо матеріали та фіксуємо остаточну ціну в договорі.
           </p>
         </div>
 
         <!-- Step 3 -->
-        <div class="relative bg-white rounded-3xl p-7 border border-stone-200/80 shadow-card reveal">
-          <div class="flex items-center justify-between mb-6">
-            <span class="font-serif text-4xl font-bold text-wood">03</span>
-            <span class="px-3 py-1 rounded-full bg-stone-100 text-xs font-semibold text-forest-800">7–21 день</span>
-          </div>
-          <h3 class="font-serif text-2xl font-bold text-forest-800">Монтаж конструкцій</h3>
-          <p class="text-sm text-slate-600 mt-3 leading-relaxed">
-            Влаштування фундаменту, зварювання та порошкове фарбування каркасу, прихований монтаж настилу, скляних огорож і пергол.
+        <div class="relative p-7 rounded-3xl bg-white border border-stone-200/80 shadow-card reveal">
+          <span class="font-serif text-5xl font-bold text-stone-200 select-none">03</span>
+          <h3 data-i18n="proc3_title" class="font-serif text-2xl font-bold text-forest-800 mt-3">Монтаж конструкцій</h3>
+          <p data-i18n="proc3_desc" class="text-sm text-slate-600 mt-2.5 leading-relaxed">
+            Власна бригада виконує фундаментні роботи, зварювання каркасу, укладання настилу та монтаж скла.
           </p>
         </div>
 
         <!-- Step 4 -->
-        <div class="relative bg-white rounded-3xl p-7 border border-stone-200/80 shadow-card reveal">
-          <div class="flex items-center justify-between mb-6">
-            <span class="font-serif text-4xl font-bold text-wood">04</span>
-            <span class="px-3 py-1 rounded-full bg-forest-800 text-white text-xs font-semibold">Гарантія</span>
-          </div>
-          <h3 class="font-serif text-2xl font-bold text-forest-800">Здача об'єкту та сервіс</h3>
-          <p class="text-sm text-slate-600 mt-3 leading-relaxed">
-            Прибирання території, фінальна перевірка вузлів, передача гарантійного сертифікату та рекомендацій щодо сезонного догляду.
+        <div class="relative p-7 rounded-3xl bg-white border border-stone-200/80 shadow-card reveal">
+          <span class="font-serif text-5xl font-bold text-stone-200 select-none">04</span>
+          <h3 data-i18n="proc4_title" class="font-serif text-2xl font-bold text-forest-800 mt-3">Здача та гарантія</h3>
+          <p data-i18n="proc4_desc" class="text-sm text-slate-600 mt-2.5 leading-relaxed">
+            Прибираємо будівельне сміття, проводимо фінальний інструктаж з експлуатації та надаємо офіційну гарантію.
           </p>
         </div>
 
       </div>
-
-      <!-- Advantages Strip -->
-      <div class="mt-12 bg-stone-100 rounded-3xl p-6 sm:p-10 border border-stone-200/80 grid grid-cols-1 md:grid-cols-3 gap-8 reveal">
-        <div class="flex items-start gap-4">
-          <div class="w-11 h-11 rounded-xl bg-wood/15 text-wood-dark flex items-center justify-center shrink-0">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-            </svg>
-          </div>
-          <div>
-            <h4 class="font-bold text-forest-800 text-base">Сертифіковані матеріали</h4>
-            <p class="text-sm text-slate-600 mt-1">Працюємо лише з перевіреним повнотілим та пустотілим ДПК, термодеревом та загартованим склом триплекс.</p>
-          </div>
-        </div>
-        <div class="flex items-start gap-4">
-          <div class="w-11 h-11 rounded-xl bg-wood/15 text-wood-dark flex items-center justify-center shrink-0">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-            </svg>
-          </div>
-          <div>
-            <h4 class="font-bold text-forest-800 text-base">Дотримання термінів</h4>
-            <p class="text-sm text-slate-600 mt-1">Власне виробництво металоконструкцій дозволяє не залежати від підрядників і здавати об'єкти вчасно.</p>
-          </div>
-        </div>
-        <div class="flex items-start gap-4">
-          <div class="w-11 h-11 rounded-xl bg-wood/15 text-wood-dark flex items-center justify-center shrink-0">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-            </svg>
-          </div>
-          <div>
-            <h4 class="font-bold text-forest-800 text-base">Приховане кріплення</h4>
-            <p class="text-sm text-slate-600 mt-1">Жодних видимих саморізів на поверхні тераси — ідеальна геометрія зазорів та естетика преміум-класу.</p>
-          </div>
-        </div>
-      </div>
-
     </div>
   </section>
 
   <!-- ==================== CONTACT & FOOTER SECTION ==================== -->
   <footer id="contacts" class="bg-forest-900 text-stone-50 pt-20 pb-12 border-t border-white/10">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 pb-16 border-b border-white/15">
         
-        <!-- Brand & Direct Contacts (Updated & Grammatically Corrected from Draft) -->
-        <div class="lg:col-span-5 space-y-6 reveal">
+        <!-- Left Contact Details -->
+        <div class="lg:col-span-6 space-y-6">
           <div class="flex items-center gap-3.5">
-            <div class="w-12 h-12 rounded-xl bg-wood flex items-center justify-center">
+            <div class="w-11 h-11 rounded-xl bg-wood flex items-center justify-center">
               <svg class="w-7 h-7 text-white" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M7 17L20 7L33 17" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M5 21H23M9 21V32M15 21V32M21 21V32" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                <path d="M5 21H23M9 21V32M15 21V32M21 21V32" stroke="#141B17" stroke-width="1.8" stroke-linecap="round"/>
                 <path d="M4 32H36" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
                 <circle cx="30" cy="22" r="4.5" stroke="currentColor" stroke-width="1.6"/>
                 <path d="M30 26.5V32" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
               </svg>
             </div>
             <div>
-              <span class="font-serif text-3xl font-bold tracking-[0.14em] text-white block leading-none">
-                ALEXBAR
-              </span>
-              <span class="text-[11px] uppercase tracking-[0.2em] text-wood-light font-semibold mt-1 block">
-                Тераси та ландшафтний дизайн
-              </span>
+              <span class="font-serif text-3xl font-bold tracking-[0.14em] text-white block leading-none">ALEXBAR</span>
+              <span data-i18n="footer_sub" class="text-xs uppercase tracking-[0.2em] text-wood-light">Проектування та будівництво терас</span>
             </div>
           </div>
 
-          <p class="text-stone-300 text-sm sm:text-base leading-relaxed max-w-md">
-            Проектування, будівництво терас під ключ, скляні огорожі, перголи та комплексний ландшафтний дизайн приватних резиденцій і заміських комплексів.
+          <p data-i18n="footer_desc" class="text-stone-300 text-base max-w-md leading-relaxed">
+            Готові обговорити ваш майбутній проект тераси чи ландшафтного благоустрою. Зв'яжіться з нами зручним способом або замовте зворотний дзвінок.
           </p>
 
           <!-- Direct Contact Cards -->
           <div class="space-y-4 pt-2">
-            <a href="tel:+380673106390" class="flex items-center gap-4 p-4 rounded-2xl bg-forest-800 border border-white/10 hover:border-wood transition-colors group">
-              <div class="w-11 h-11 rounded-xl bg-wood/20 text-wood-light flex items-center justify-center group-hover:bg-wood group-hover:text-white transition-colors">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <a href="tel:+380673106390" class="flex items-center gap-4 p-4 rounded-2xl bg-forest-800/90 border border-white/10 hover:border-wood transition-colors max-w-md group">
+              <div class="w-12 h-12 rounded-xl bg-wood/20 text-wood-light flex items-center justify-center group-hover:bg-wood group-hover:text-white transition-colors">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                 </svg>
               </div>
               <div>
-                <span class="text-xs uppercase tracking-wider text-stone-400 block">ТЕЛ:</span>
-                <span class="text-lg font-bold text-white tracking-wide">+38 (067) 310-63-90</span>
+                <span data-i18n="footer_phone_lbl" class="text-xs uppercase tracking-wider text-stone-400 block">Телефон / Viber / Telegram</span>
+                <span class="text-xl font-bold text-white tracking-wide">+38 (067) 310-63-90</span>
               </div>
             </a>
 
-            <a href="mailto:alexbar2681@gmail.com" class="flex items-center gap-4 p-4 rounded-2xl bg-forest-800 border border-white/10 hover:border-wood transition-colors group">
-              <div class="w-11 h-11 rounded-xl bg-wood/20 text-wood-light flex items-center justify-center group-hover:bg-wood group-hover:text-white transition-colors">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <a href="mailto:alexbar@gmail.com" class="flex items-center gap-4 p-4 rounded-2xl bg-forest-800/90 border border-white/10 hover:border-wood transition-colors max-w-md group">
+              <div class="w-12 h-12 rounded-xl bg-wood/20 text-wood-light flex items-center justify-center group-hover:bg-wood group-hover:text-white transition-colors">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
               </div>
               <div>
-                <span class="text-xs uppercase tracking-wider text-stone-400 block">E-MAIL:</span>
-                <span class="text-lg font-bold text-white">alexbar@gmail.com</span>
+                <span data-i18n="footer_email_lbl" class="text-xs uppercase tracking-wider text-stone-400 block">Електронна пошта (E-MAIL)</span>
+                <span class="text-lg font-semibold text-white">alexbar@gmail.com</span>
               </div>
             </a>
           </div>
         </div>
 
-        <!-- Consultation Request Form -->
-        <div class="lg:col-span-7 reveal">
-          <div class="bg-forest-800 border border-white/15 rounded-3xl p-6 sm:p-10">
-            <h3 class="font-serif text-3xl font-bold text-white">
+        <!-- Right Consultation Form -->
+        <div class="lg:col-span-6">
+          <div class="bg-forest-800 border border-white/10 rounded-3xl p-6 sm:p-8 lg:p-10 shadow-2xl">
+            <h3 data-i18n="form_title" class="font-serif text-2xl sm:text-3xl font-bold text-white">
               Замовити виїзд інженера на ділянку
             </h3>
-            <p class="text-stone-300 text-sm mt-2">
-              Залиште заявку, і ми зв'яжемося з вами протягом 30 хвилин для узгодження зручного часу консультації.
+            <p data-i18n="form_subtitle" class="text-sm text-stone-300 mt-2">
+              Залиште контакти — ми зателефонуємо протягом 15 хвилин для узгодження зручного часу.
             </p>
 
             <form id="contact-form" class="mt-6 space-y-4">
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label for="contact-name" class="block text-xs font-semibold uppercase tracking-wider text-stone-300 mb-1.5">Ваше ім'я *</label>
-                  <input type="text" id="contact-name" required placeholder="Олександр" class="w-full px-4 py-3.5 rounded-xl bg-forest-900 border border-white/15 text-white placeholder-stone-500 text-sm focus:outline-none focus:border-wood-light" />
+                  <label data-i18n="form_name_lbl" class="block text-xs font-semibold uppercase tracking-wider text-stone-300 mb-1.5">Ваше ім'я</label>
+                  <input type="text" required data-i18n-placeholder="ph_name" placeholder="Олександр" class="w-full px-4 py-3.5 rounded-xl bg-forest-900 border border-white/15 text-white placeholder-stone-500 text-sm focus:outline-none focus:border-wood-light" />
                 </div>
                 <div>
-                  <label for="contact-phone" class="block text-xs font-semibold uppercase tracking-wider text-stone-300 mb-1.5">Телефон *</label>
-                  <input type="tel" id="contact-phone" required placeholder="+38 (067) 000-00-00" class="w-full px-4 py-3.5 rounded-xl bg-forest-900 border border-white/15 text-white placeholder-stone-500 text-sm focus:outline-none focus:border-wood-light" />
+                  <label data-i18n="form_phone_lbl" class="block text-xs font-semibold uppercase tracking-wider text-stone-300 mb-1.5">Телефон</label>
+                  <input type="tel" required data-i18n-placeholder="ph_phone" placeholder="+38 (0__) ___-__-__" class="w-full px-4 py-3.5 rounded-xl bg-forest-900 border border-white/15 text-white placeholder-stone-500 text-sm focus:outline-none focus:border-wood-light" />
                 </div>
               </div>
 
               <div>
-                <label for="contact-service" class="block text-xs font-semibold uppercase tracking-wider text-stone-300 mb-1.5">Що вас цікавить?</label>
-                <select id="contact-service" class="w-full px-4 py-3.5 rounded-xl bg-forest-900 border border-white/15 text-white text-sm focus:outline-none focus:border-wood-light">
-                  <option value="Будівництво тераси під ключ">Будівництво тераси під ключ</option>
-                  <option value="Проектування та 3D-візуалізація">Проектування та 3D-візуалізація</option>
-                  <option value="Скляні та металеві огорожі">Скляні та металеві огорожі</option>
-                  <option value="Ландшафтний дизайн та автополив">Ландшафтний дизайн та автополив</option>
-                  <option value="Пергола або зона відпочинку">Пергола або зона відпочинку</option>
+                <label data-i18n="form_type_lbl" class="block text-xs font-semibold uppercase tracking-wider text-stone-300 mb-1.5">Що плануєте реалізувати?</label>
+                <select class="w-full px-4 py-3.5 rounded-xl bg-forest-900 border border-white/15 text-white text-sm focus:outline-none focus:border-wood-light">
+                  <option data-i18n="opt_1">Будівництво тераси під ключ</option>
+                  <option data-i18n="opt_2">Тераса зі скляними огорожами</option>
+                  <option data-i18n="opt_3">Пергола / Навіс / Зона барбекю</option>
+                  <option data-i18n="opt_4">Комплексний ландшафтний дизайн</option>
                 </select>
               </div>
 
               <div>
-                <label for="contact-message" class="block text-xs font-semibold uppercase tracking-wider text-stone-300 mb-1.5">Коментар або площа ділянки</label>
-                <textarea id="contact-message" rows="3" placeholder="Наприклад: тераса біля будинку 45 м² зі скляною огорожею..." class="w-full px-4 py-3.5 rounded-xl bg-forest-900 border border-white/15 text-white placeholder-stone-500 text-sm focus:outline-none focus:border-wood-light"></textarea>
+                <label data-i18n="form_msg_lbl" class="block text-xs font-semibold uppercase tracking-wider text-stone-300 mb-1.5">Коментар або площа (необов'язково)</label>
+                <textarea rows="3" data-i18n-placeholder="ph_msg" placeholder="Наприклад: тераса біля будинку 35 м², потрібні сходи та освітлення..." class="w-full px-4 py-3 rounded-xl bg-forest-900 border border-white/15 text-white placeholder-stone-500 text-sm focus:outline-none focus:border-wood-light"></textarea>
               </div>
 
-              <button type="submit" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-wood hover:bg-wood-light text-white font-semibold text-sm uppercase tracking-wider transition-all duration-300 shadow-lg">
+              <button type="submit" data-i18n="form_submit" class="w-full py-4 rounded-xl bg-wood hover:bg-wood-light text-white font-semibold text-sm uppercase tracking-wider transition-all duration-300 shadow-lg">
                 Надіслати заявку
               </button>
             </form>
@@ -820,395 +767,872 @@
 
       </div>
 
-      <!-- Bottom Copyright & Quick Links -->
+      <!-- Bottom Copyright -->
       <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-stone-400">
-        <p>© 2026 ALEXBAR. Проектування, будівництво терас та ландшафтний дизайн. Всі права захищено.</p>
+        <p data-i18n="footer_copy">© 2026 ALEXBAR — Проектування, будівництво терас та ландшафтний дизайн. Всі права захищено.</p>
         <div class="flex items-center gap-6">
-          <a href="#services" class="hover:text-white transition-colors">Послуги</a>
-          <a href="#portfolio" class="hover:text-white transition-colors">Проекти</a>
-          <a href="#calculator" class="hover:text-white transition-colors">Калькулятор</a>
+          <a href="#services" data-i18n="nav_services" class="hover:text-white transition-colors">Послуги</a>
+          <a href="#portfolio" data-i18n="nav_portfolio" class="hover:text-white transition-colors">Портфоліо</a>
+          <a href="#calculator" data-i18n="nav_calculator" class="hover:text-white transition-colors">Калькулятор</a>
         </div>
       </div>
-
     </div>
   </footer>
 
   <!-- ==================== PROJECT LIGHTBOX MODAL ==================== -->
   <div id="project-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-forest-900/85 backdrop-blur-sm">
-    <div class="bg-stone-50 text-slate-900 rounded-3xl max-w-3xl w-full overflow-hidden shadow-2xl border border-stone-200 animate-fadeIn">
+    <div class="bg-stone-50 rounded-3xl max-w-3xl w-full overflow-hidden shadow-2xl border border-stone-200 animate-fade-in">
       <div class="relative aspect-[16/9] bg-forest-800">
         <img id="modal-img" src="" alt="" class="w-full h-full object-cover" />
-        <button id="close-modal" aria-label="Закрити вікно" class="absolute top-4 right-4 w-10 h-10 rounded-full bg-forest-900/80 text-white hover:bg-wood flex items-center justify-center transition-colors">
+        <button id="modal-close" aria-label="Close" class="absolute top-4 right-4 w-10 h-10 rounded-full bg-forest-900/80 text-white hover:bg-wood flex items-center justify-center transition-colors">
           <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
           </svg>
         </button>
-        <span id="modal-category" class="absolute bottom-4 left-4 px-3.5 py-1.5 rounded-xl bg-forest-800/90 text-wood-light text-xs font-semibold uppercase tracking-wider"></span>
       </div>
       <div class="p-6 sm:p-8">
-        <h3 id="modal-title" class="font-serif text-2xl sm:text-3xl font-bold text-forest-800"></h3>
-        <p id="modal-desc" class="text-slate-600 text-sm sm:text-base mt-3 leading-relaxed"></p>
-
-        <div class="grid grid-cols-3 gap-4 mt-6 pt-6 border-t border-stone-200">
-          <div>
-            <span class="text-xs text-slate-500 block">Матеріали</span>
-            <span id="modal-materials" class="text-sm font-bold text-forest-800 mt-0.5 block"></span>
-          </div>
-          <div>
-            <span class="text-xs text-slate-500 block">Площа об'єкту</span>
-            <span id="modal-area" class="text-sm font-bold text-forest-800 mt-0.5 block"></span>
-          </div>
-          <div>
-            <span class="text-xs text-slate-500 block">Термін реалізації</span>
-            <span id="modal-time" class="text-sm font-bold text-forest-800 mt-0.5 block"></span>
-          </div>
+        <div class="flex flex-wrap items-center justify-between gap-2">
+          <span id="modal-category" class="text-xs font-bold uppercase tracking-widest text-wood-dark"></span>
+          <span id="modal-area" class="px-3 py-1 rounded-full bg-stone-200 text-forest-800 text-xs font-semibold"></span>
         </div>
-
-        <div class="mt-7 flex flex-col sm:flex-row gap-3 justify-end">
-          <button id="modal-order-btn" class="px-6 py-3 rounded-xl bg-forest-800 hover:bg-wood text-white text-sm font-semibold transition-colors">
-            Замовити схожий проект
-          </button>
+        <h3 id="modal-title" class="font-serif text-2xl sm:text-3xl font-bold text-forest-800 mt-2"></h3>
+        <p id="modal-desc" class="text-slate-600 text-sm sm:text-base mt-3 leading-relaxed"></p>
+        <div class="mt-6 pt-5 border-t border-stone-200 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+          <div id="modal-specs" class="text-xs text-slate-500 font-medium"></div>
+          <a href="#calculator" id="modal-calc-cta" data-i18n="modal_cta" class="px-5 py-2.5 rounded-xl bg-forest-800 text-white text-xs font-semibold uppercase tracking-wider hover:bg-wood transition-colors text-center">
+            Розрахувати схожий проект
+          </a>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- ==================== NOTIFICATION TOAST (NO ALERT()) ==================== -->
-  <div id="toast" class="fixed bottom-6 right-6 z-50 max-w-sm bg-forest-800 text-white border border-wood/50 rounded-2xl p-4 shadow-2xl transform translate-y-24 opacity-0 pointer-events-none transition-all duration-300 flex items-start gap-3.5">
-    <div class="w-9 h-9 rounded-xl bg-wood text-white flex items-center justify-center shrink-0 mt-0.5">
-      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+  <!-- ==================== TOAST NOTIFICATION ==================== -->
+  <div id="toast" class="fixed bottom-6 right-6 z-50 translate-y-24 opacity-0 pointer-events-none transition-all duration-300 bg-forest-800 text-white px-6 py-4 rounded-2xl shadow-2xl border border-wood/40 flex items-center gap-3 max-w-sm">
+    <div class="w-8 h-8 rounded-full bg-wood flex items-center justify-center shrink-0">
+      <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
       </svg>
     </div>
     <div>
-      <h4 id="toast-title" class="font-bold text-sm text-white">Заявку успішно надіслано!</h4>
-      <p id="toast-body" class="text-xs text-stone-300 mt-1 leading-relaxed">
-        Дякуємо за звернення до ALEXBAR. Наш спеціаліст зв'яжеться з вами найближчим часом.
-      </p>
+      <p data-i18n="toast_title" class="text-sm font-bold">Заявку успішно надіслано!</p>
+      <p data-i18n="toast_desc" class="text-xs text-stone-300 mt-0.5">Менеджер ALEXBAR зв'яжеться з вами найближчим часом.</p>
     </div>
   </div>
 
-  <!-- ==================== INTERACTIVE JAVASCRIPT ==================== -->
+  <!-- ==================== JAVASCRIPT INTERACTIVITY & TRILINGUAL ENGINE ==================== -->
   <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      
-      // 1. Portfolio Projects Data (Directly inspired by the lakeside deck + glass railings in the flyer)
-      const projects = [
-        {
-          id: 1,
-          category: 'glass',
+    let currentLang = 'uk';
+
+    // Complete Trilingual Dictionary (UA / ES / EN)
+    const translations = {
+      uk: {
+        page_title: "ALEXBAR — Проектування, будівництво терас та ландшафтний дизайн",
+        nav_services: "Послуги",
+        nav_portfolio: "Проекти",
+        nav_calculator: "Калькулятор",
+        nav_calculator_full: "Калькулятор вартості",
+        nav_process: "Етапи роботи",
+        nav_contacts: "Контакти",
+        nav_cta: "Замовити прорахунок",
+        hero_badge: "Архітектура заміського простору",
+        hero_title: 'ПРОЕКТУВАННЯ, БУДІВНИЦТВО ТЕРАС ТА <span class="italic text-wood-dark">ЛАНДШАФТНИЙ ДИЗАЙН</span>',
+        hero_subtitle: "Створюємо естетичні та довговічні простори для відпочинку під ключ: тераси з преміального ДПК та термодерева, безрамні скляні огорожі, архітектурні перголи та гармонійний ландшафт вашої ділянки.",
+        hero_btn_calc: "Розрахувати вартість",
+        hero_btn_portfolio: "Переглянути портфоліо",
+        metric_1: "Реалізованих терас",
+        metric_2_val: "5 років",
+        metric_2: "Гарантія на настил",
+        metric_3: "Проект до початку робіт",
+        hero_card_tag: "Флагманський об'єкт",
+        hero_card_title: "Панорамна тераса біля водойми",
+        hero_card_desc: "ДПК терасна дошка + загартоване скло на чорних стійках",
+        hero_card_btn: "Детальніше",
+        srv_tag: "Комплексний підхід",
+        srv_title: "Наші послуги",
+        srv_subtitle: "Виконуємо повний цикл робіт — від геодезичної прив'язки та 3D-візуалізації до монтажу складних інженерних конструкцій та фінішного озеленення.",
+        srv1_tag: "01 / Архітектура",
+        srv1_title: "Проектування терас та пергол",
+        srv1_desc: "Фотореалістична 3D-візуалізація, креслення металокаркасу та вузлів кріплення, інженерний розрахунок навантажень під особливості рельєфу.",
+        srv1_meta: "Термін: 5–10 днів",
+        srv1_link: "Замовити →",
+        srv2_tag: "02 / Будівництво",
+        srv2_title: "Будівництво терас під ключ",
+        srv2_desc: "Монтаж терасної дошки ДПК, термоясеня та модрини на регульованих опорах або металокаркасі. Встановлення скляних та металевих огорож.",
+        srv2_meta: "Гарантія до 15 років",
+        srv2_link: "Прорахувати →",
+        srv3_tag: "03 / Природа",
+        srv3_title: "Ландшафтний дизайн",
+        srv3_desc: "Комплексне озеленення, висадка крупномірів, рулонний газон, проектування систем автоматичного поливу та сценаріїв ландшафтного освітлення.",
+        srv3_meta: "Індивідуальний дендроплан",
+        srv3_link: "Консультація →",
+        srv4_tag: "04 / Comfort Zone",
+        srv4_title: "Облаштування зон відпочинку",
+        srv4_desc: "Біокліматичні перголи з поворотними ламелями, сучасні літні кухні, барбекю-комплекси та затишні вогнищеві зони (fire-pit).",
+        srv4_meta: "Під ключ з меблями",
+        srv4_link: "Детальніше →",
+        port_tag: "Портфоліо студії",
+        port_title: "Реалізовані проекти",
+        flt_all: "Всі проекти",
+        flt_glass: "Тераси зі склом",
+        flt_landscape: "Ландшафт",
+        flt_pergola: "Перголи",
+        calc_tag: "Онлайн-розрахунок",
+        calc_title: "Калькулятор вартості тераси",
+        calc_subtitle: "Оберіть бажані параметри тераси, щоб миттєво дізнатися орієнтовний бюджет будівництва під ключ у євро (€) з урахуванням матеріалів та монтажу.",
+        calc_step1: "1. Площа тераси",
+        calc_area_min: "10 м² (компактна)",
+        calc_area_mid: "80 м² (середня)",
+        calc_area_max: "150 м² (резиденція)",
+        calc_step2: "2. Матеріал терасного настилу",
+        mat_wpc_name: "ДПК Композит",
+        mat_wpc_desc: "Не потребує догляду",
+        mat_wpc_price: "від €235 / м²",
+        mat_ash_name: "Термоясен",
+        mat_ash_desc: "Натуральна текстура",
+        mat_ash_price: "від €295 / м²",
+        mat_larch_name: "Модрина",
+        mat_larch_desc: "Класична деревина",
+        mat_larch_price: "від €195 / м²",
+        calc_step3: "3. Тип огорожі периметру",
+        rail_none_name: "Без огорожі",
+        rail_none_desc: "В рівень з газоном",
+        rail_glass_name: "Скляна огорожа",
+        rail_glass_desc: "Загартоване скло 10 мм",
+        rail_glass_price: "+€315 / м² площі",
+        rail_glass_summary: "Скляна на чорних стійках",
+        rail_loft_name: "Металевий лофт",
+        rail_loft_desc: "Алюмінієва огорожа (порошкове фарбування)",
+        rail_loft_price: "+€285 / м² площі",
+        calc_step4: "4. Додаткові опції",
+        ext_stairs_name: "Сходи (до 10 сходинок)",
+        ext_stairs_short: "Сходи",
+        ext_led_name: "LED-підсвітка",
+        ext_led_short: "LED-підсвітка",
+        ext_pergola_name: "Пергола (до 10 м²)",
+        ext_pergola_short: "Пергола",
+        ext_none: "Базова комплектація",
+        sum_tag: "Ваш попередній кошторис",
+        sum_label: "Орієнтовна вартість під ключ:",
+        sum_note: "(матеріали + робота)",
+        sum_area_lbl: "Площа настилу:",
+        sum_mat_lbl: "Матеріал дошки:",
+        sum_rail_lbl: "Огорожа:",
+        sum_ext_lbl: "Опції:",
+        sum_form_desc: "Залиште номер телефону, щоб зафіксувати кошторис та отримати безкоштовний замір ділянки:",
+        sum_submit: "Отримати точний кошторис",
+        proc_tag: "Прозорість на кожному кроці",
+        proc_title: "Як ми працюємо",
+        proc1_title: "Виїзд та замір",
+        proc1_desc: "Інженер приїжджає на об'єкт зі зразками дошки, оцінює ґрунти, перепади висот та фіксує ваші побажання.",
+        proc2_title: "3D-проект і кошторис",
+        proc2_desc: "Розробляємо архітектурну візуалізацію, узгоджуємо матеріали та фіксуємо остаточну ціну в договорі.",
+        proc3_title: "Монтаж конструкцій",
+        proc3_desc: "Власна бригада виконує фундаментні роботи, зварювання каркасу, укладання настилу та монтаж скла.",
+        proc4_title: "Здача та гарантія",
+        proc4_desc: "Прибираємо будівельне сміття, проводимо фінальний інструктаж з експлуатації та надаємо офіційну гарантію.",
+        footer_sub: "Проектування та будівництво терас",
+        footer_desc: "Готові обговорити ваш майбутній проект тераси чи ландшафтного благоустрою. Зв'яжіться з нами зручним способом або замовте зворотний дзвінок.",
+        footer_phone_lbl: "Телефон / Viber / Telegram",
+        footer_email_lbl: "Електронна пошта (E-MAIL)",
+        form_title: "Замовити виїзд інженера на ділянку",
+        form_subtitle: "Залиште контакти — ми зателефонуємо протягом 15 хвилин для узгодження зручного часу.",
+        form_name_lbl: "Ваше ім'я",
+        form_phone_lbl: "Телефон",
+        form_type_lbl: "Що плануєте реалізувати?",
+        opt_1: "Будівництво тераси під ключ",
+        opt_2: "Тераса зі скляними огорожами",
+        opt_3: "Пергола / Навіс / Зона барбекю",
+        opt_4: "Комплексний ландшафтний дизайн",
+        form_msg_lbl: "Коментар або площа (необов'язково)",
+        form_submit: "Надіслати заявку",
+        footer_copy: "© 2026 ALEXBAR — Проектування, будівництво терас та ландшафтний дизайн. Всі права захищено.",
+        modal_cta: "Розрахувати схожий проект",
+        toast_title: "Заявку успішно надіслано!",
+        toast_desc: "Менеджер ALEXBAR зв'яжеться з вами найближчим часом.",
+        ph_phone: "+38 (0__) ___-__-__",
+        ph_name: "Олександр",
+        ph_msg: "Наприклад: тераса біля будинку 35 м², потрібні сходи та освітлення...",
+        unit_sqm: "м²"
+      },
+      es: {
+        page_title: "ALEXBAR — Diseño, construcción de terrazas y paisajismo",
+        nav_services: "Servicios",
+        nav_portfolio: "Proyectos",
+        nav_calculator: "Calculadora",
+        nav_calculator_full: "Calculadora de costes",
+        nav_process: "Proceso",
+        nav_contacts: "Contacto",
+        nav_cta: "Pedir presupuesto",
+        hero_badge: "Arquitectura de espacios exteriores",
+        hero_title: 'DISEÑO, CONSTRUCCIÓN DE TERRAZAS Y <span class="italic text-wood-dark">PAISAJISMO</span>',
+        hero_subtitle: "Creamos espacios exteriores estéticos y duraderos llave en mano: terrazas de composite WPC y madera termotratada, barandillas de cristal sin marco, pérgolas bioclimáticas y diseño de jardines.",
+        hero_btn_calc: "Calcular presupuesto",
+        hero_btn_portfolio: "Ver portafolio",
+        metric_1: "Terrazas realizadas",
+        metric_2_val: "5 años",
+        metric_2: "Garantía en tarima",
+        metric_3: "Proyecto 3D previo",
+        hero_card_tag: "Proyecto destacado",
+        hero_card_title: "Terraza panorámica frente al lago",
+        hero_card_desc: "Tarima exterior WPC + vidrio templado con postes negros",
+        hero_card_btn: "Ver detalles",
+        srv_tag: "Enfoque integral",
+        srv_title: "Nuestros servicios",
+        srv_subtitle: "Ejecutamos el ciclo completo de obra: desde el levantamiento topográfico y visualización 3D hasta el montaje estructural y paisajismo final.",
+        srv1_tag: "01 / Arquitectura",
+        srv1_title: "Diseño de terrazas y pérgolas",
+        srv1_desc: "Visualización 3D fotorrealista, planos de estructura metálica, detalles de anclaje y cálculo de cargas adaptado a la topografía del terreno.",
+        srv1_meta: "Plazo: 5–10 días",
+        srv1_link: "Solicitar →",
+        srv2_tag: "02 / Construcción",
+        srv2_title: "Terrazas llave en mano",
+        srv2_desc: "Instalación de tarima composite WPC, fresno termotratado y alerce sobre plots regulables o estructura metálica. Barandillas de vidrio y acero.",
+        srv2_meta: "Garantía hasta 15 años",
+        srv2_link: "Calcular →",
+        srv3_tag: "03 / Naturaleza",
+        srv3_title: "Diseño paisajístico",
+        srv3_desc: "Ajardinamiento integral, plantación de ejemplares, césped natural, sistemas de riego automático e iluminación arquitectónica exterior.",
+        srv3_meta: "Plan botánico a medida",
+        srv3_link: "Consultoría →",
+        srv4_tag: "04 / Zona Chill-Out",
+        srv4_title: "Áreas de descanso exterior",
+        srv4_desc: "Pérgolas bioclimáticas con lamas orientables, cocinas exteriores, zonas de barbacoa y espacios acogedores con fogatero (fire-pit).",
+        srv4_meta: "Llave en mano",
+        srv4_link: "Más info →",
+        port_tag: "Portafolio del estudio",
+        port_title: "Proyectos realizados",
+        flt_all: "Todos",
+        flt_glass: "Terrazas con cristal",
+        flt_landscape: "Paisajismo",
+        flt_pergola: "Pérgolas",
+        calc_tag: "Presupuesto online",
+        calc_title: "Calculadora de coste de terraza",
+        calc_subtitle: "Seleccione las características de su terraza para conocer al instante el presupuesto estimado llave en mano en euros (€), incluyendo materiales e instalación.",
+        calc_step1: "1. Superficie de la terraza",
+        calc_area_min: "10 m² (compacta)",
+        calc_area_mid: "80 m² (mediana)",
+        calc_area_max: "150 m² (residencia)",
+        calc_step2: "2. Material de la tarima",
+        mat_wpc_name: "Composite WPC",
+        mat_wpc_desc: "Sin mantenimiento",
+        mat_wpc_price: "desde €235 / m²",
+        mat_ash_name: "Fresno termotratado",
+        mat_ash_desc: "Textura natural",
+        mat_ash_price: "desde €295 / m²",
+        mat_larch_name: "Madera de alerce",
+        mat_larch_desc: "Madera clásica",
+        mat_larch_price: "desde €195 / m²",
+        calc_step3: "3. Tipo de barandilla perimetral",
+        rail_none_name: "Sin barandilla",
+        rail_none_desc: "A ras del césped",
+        rail_glass_name: "Barandilla de cristal",
+        rail_glass_desc: "Vidrio templado 10 mm",
+        rail_glass_price: "+€315 / m² superficie",
+        rail_glass_summary: "Cristal con postes negros",
+        rail_loft_name: "Metal estilo Loft",
+        rail_loft_desc: "Barandilla de aluminio (lacado al horno)",
+        rail_loft_price: "+€285 / m² superficie",
+        calc_step4: "4. Opciones adicionales",
+        ext_stairs_name: "Escalera (hasta 10 peldaños)",
+        ext_stairs_short: "Escalera",
+        ext_led_name: "Iluminación LED",
+        ext_led_short: "Iluminación LED",
+        ext_pergola_name: "Pérgola (hasta 10 m²)",
+        ext_pergola_short: "Pérgola",
+        ext_none: "Configuración base",
+        sum_tag: "Su presupuesto preliminar",
+        sum_label: "Coste estimado llave en mano:",
+        sum_note: "(materiales + mano de obra)",
+        sum_area_lbl: "Superficie:",
+        sum_mat_lbl: "Material tarima:",
+        sum_rail_lbl: "Barandilla:",
+        sum_ext_lbl: "Extras:",
+        sum_form_desc: "Deje su teléfono para guardar este presupuesto y solicitar una medición gratuita en su parcela:",
+        sum_submit: "Obtener presupuesto exacto",
+        proc_tag: "Transparencia en cada paso",
+        proc_title: "Cómo trabajamos",
+        proc1_title: "Visita y medición",
+        proc1_desc: "Nuestro ingeniero visita la parcela con muestras de tarima, evalúa el terreno, desniveles y define sus requisitos.",
+        proc2_title: "Proyecto 3D y contrato",
+        proc2_desc: "Creamos la visualización arquitectónica, aprobamos materiales y fijamos el precio cerrado por contrato.",
+        proc3_title: "Montaje estructural",
+        proc3_desc: "Equipo propio ejecuta cimentación, estructura metálica, colocación de tarima e instalación de vidrio.",
+        proc4_title: "Entrega y garantía",
+        proc4_desc: "Limpieza completa de obra, guía de mantenimiento y entrega de garantía oficial por escrito.",
+        footer_sub: "Diseño y construcción de terrazas",
+        footer_desc: "¿Listo para hablar de su futura terraza o proyecto de paisajismo? Contáctenos directamente o solicite una llamada.",
+        footer_phone_lbl: "Teléfono / WhatsApp / Telegram",
+        footer_email_lbl: "Correo electrónico (E-MAIL)",
+        form_title: "Solicitar visita de ingeniero",
+        form_subtitle: "Déjenos sus datos y le llamaremos en menos de 15 minutos para coordinar la visita.",
+        form_name_lbl: "Su nombre",
+        form_phone_lbl: "Teléfono",
+        form_type_lbl: "¿Qué proyecto desea realizar?",
+        opt_1: "Construcción de terraza llave en mano",
+        opt_2: "Terraza con barandillas de cristal",
+        opt_3: "Pérgola / Porche / Zona barbacoa",
+        opt_4: "Diseño paisajístico integral",
+        form_msg_lbl: "Comentario o superficie (opcional)",
+        form_submit: "Enviar solicitud",
+        footer_copy: "© 2026 ALEXBAR — Diseño, construcción de terrazas y paisajismo. Todos los derechos reservados.",
+        modal_cta: "Calcular proyecto similar",
+        toast_title: "¡Solicitud enviada con éxito!",
+        toast_desc: "Un especialista de ALEXBAR se pondrá en contacto con usted muy pronto.",
+        ph_phone: "+34 6__ __ __ __",
+        ph_name: "Alejandro",
+        ph_msg: "Ej.: terraza junto a la casa de 35 m², con escalera e iluminación LED...",
+        unit_sqm: "m²"
+      },
+      en: {
+        page_title: "ALEXBAR — Terrace Design, Construction & Landscape Architecture",
+        nav_services: "Services",
+        nav_portfolio: "Projects",
+        nav_calculator: "Calculator",
+        nav_calculator_full: "Cost Calculator",
+        nav_process: "Process",
+        nav_contacts: "Contact",
+        nav_cta: "Get an Estimate",
+        hero_badge: "Outdoor Living Architecture",
+        hero_title: 'TERRACE DESIGN, CONSTRUCTION & <span class="italic text-wood-dark">LANDSCAPE ARCHITECTURE</span>',
+        hero_subtitle: "We craft aesthetic, enduring turnkey outdoor spaces: premium WPC composite and thermo-wood decks, frameless glass railings, architectural pergolas, and bespoke landscaping.",
+        hero_btn_calc: "Calculate Cost",
+        hero_btn_portfolio: "Explore Portfolio",
+        metric_1: "Completed terraces",
+        metric_2_val: "5 years",
+        metric_2: "Decking warranty",
+        metric_3: "3D design before build",
+        hero_card_tag: "Flagship Project",
+        hero_card_title: "Panoramic Lakeside Terrace",
+        hero_card_desc: "WPC composite decking + tempered glass on matte black posts",
+        hero_card_btn: "View Details",
+        srv_tag: "Turnkey Approach",
+        srv_title: "Our Services",
+        srv_subtitle: "We manage the complete lifecycle — from site survey and 3D architectural visualization to structural steelwork and final garden planting.",
+        srv1_tag: "01 / Architecture",
+        srv1_title: "Terrace & Pergola Design",
+        srv1_desc: "Photorealistic 3D visualization, structural framing blueprints, fastening details, and load engineering tailored to your terrain.",
+        srv1_meta: "Timeline: 5–10 days",
+        srv1_link: "Order Design →",
+        srv2_tag: "02 / Construction",
+        srv2_title: "Turnkey Terrace Building",
+        srv2_desc: "Installation of WPC composite, thermo-ash, and larch decking on adjustable pedestals or steel frames. Glass and metal railings.",
+        srv2_meta: "Up to 15-year warranty",
+        srv2_link: "Calculate →",
+        srv3_tag: "03 / Nature",
+        srv3_title: "Landscape Design",
+        srv3_desc: "Comprehensive planting, mature trees, rolled turf, automated irrigation systems, and architectural outdoor lighting scenes.",
+        srv3_meta: "Custom planting plan",
+        srv3_link: "Consult →",
+        srv4_tag: "04 / Comfort Zone",
+        srv4_title: "Outdoor Lounge & Fire-Pits",
+        srv4_desc: "Bioclimatic louvered pergolas, modern summer kitchens, BBQ complexes, and cozy fire-pit lounge areas.",
+        srv4_meta: "Turnkey with furniture",
+        srv4_link: "Learn more →",
+        port_tag: "Studio Portfolio",
+        port_title: "Featured Projects",
+        flt_all: "All Projects",
+        flt_glass: "Glass Railings",
+        flt_landscape: "Landscape",
+        flt_pergola: "Pergolas",
+        calc_tag: "Instant Estimator",
+        calc_title: "Terrace Cost Calculator",
+        calc_subtitle: "Select your preferred terrace specifications to instantly estimate your turnkey budget in Euros (€), including materials and installation.",
+        calc_step1: "1. Terrace Area",
+        calc_area_min: "10 m² (compact)",
+        calc_area_mid: "80 m² (medium)",
+        calc_area_max: "150 m² (residence)",
+        calc_step2: "2. Decking Material",
+        mat_wpc_name: "WPC Composite",
+        mat_wpc_desc: "Zero maintenance",
+        mat_wpc_price: "from €235 / m²",
+        mat_ash_name: "Thermo-Ash",
+        mat_ash_desc: "Rich natural grain",
+        mat_ash_price: "from €295 / m²",
+        mat_larch_name: "Siberian Larch",
+        mat_larch_desc: "Classic timber",
+        mat_larch_price: "from €195 / m²",
+        calc_step3: "3. Perimeter Railing Type",
+        rail_none_name: "No Railing",
+        rail_none_desc: "Flush with lawn",
+        rail_glass_name: "Glass Railing",
+        rail_glass_desc: "10 mm tempered glass",
+        rail_glass_price: "+€315 / m² area",
+        rail_glass_summary: "Glass on black posts",
+        rail_loft_name: "Metal Loft",
+        rail_loft_desc: "Aluminum railing (powder-coated)",
+        rail_loft_price: "+€285 / m² area",
+        calc_step4: "4. Additional Options",
+        ext_stairs_name: "Stairs (up to 10 steps)",
+        ext_stairs_short: "Stairs",
+        ext_led_name: "LED Lighting",
+        ext_led_short: "LED Lighting",
+        ext_pergola_name: "Pergola (up to 10 m²)",
+        ext_pergola_short: "Pergola",
+        ext_none: "Standard package",
+        sum_tag: "Your Preliminary Estimate",
+        sum_label: "Estimated turnkey budget:",
+        sum_note: "(materials + labor)",
+        sum_area_lbl: "Decking area:",
+        sum_mat_lbl: "Board material:",
+        sum_rail_lbl: "Railing:",
+        sum_ext_lbl: "Options:",
+        sum_form_desc: "Leave your phone number to lock in this quote and schedule a free on-site measurement:",
+        sum_submit: "Get Exact Quote",
+        proc_tag: "Transparency at every stage",
+        proc_title: "How We Work",
+        proc1_title: "Site Visit & Survey",
+        proc1_desc: "Our engineer visits your property with decking samples, evaluates soil, elevation changes, and records your goals.",
+        proc2_title: "3D Design & Fixed Quote",
+        proc2_desc: "We create architectural 3D renders, finalize materials, and lock in a fixed price in the contract.",
+        proc3_title: "Structural Installation",
+        proc3_desc: "Our in-house crew executes foundation work, steel framing, board installation, and glass mounting.",
+        proc4_title: "Handover & Warranty",
+        proc4_desc: "Full site cleanup, care walkthrough, and official written warranty handover.",
+        footer_sub: "Terrace Design & Construction",
+        footer_desc: "Ready to discuss your upcoming terrace or landscape architecture project? Reach out directly or request a callback.",
+        footer_phone_lbl: "Phone / WhatsApp / Telegram",
+        footer_email_lbl: "Email Address (E-MAIL)",
+        form_title: "Book an On-Site Engineer Visit",
+        form_subtitle: "Leave your contact details — we will call you within 15 minutes to arrange a convenient time.",
+        form_name_lbl: "Your Name",
+        form_phone_lbl: "Phone Number",
+        form_type_lbl: "What are you planning to build?",
+        opt_1: "Turnkey terrace construction",
+        opt_2: "Terrace with glass railings",
+        opt_3: "Pergola / Canopy / BBQ Zone",
+        opt_4: "Comprehensive landscape design",
+        form_msg_lbl: "Notes or approximate area (optional)",
+        form_submit: "Send Request",
+        footer_copy: "© 2026 ALEXBAR — Terrace Design, Construction & Landscape Architecture. All rights reserved.",
+        modal_cta: "Calculate Similar Project",
+        toast_title: "Request sent successfully!",
+        toast_desc: "An ALEXBAR specialist will contact you shortly.",
+        ph_phone: "+1 (___) ___-____",
+        ph_name: "Alex",
+        ph_msg: "E.g., 35 m² backyard terrace with stairs and integrated LED lighting...",
+        unit_sqm: "m²"
+      }
+    };
+
+    // Multilingual Portfolio Data
+    const projectsData = [
+      {
+        id: 1,
+        category: 'glass',
+        area: '58 м²',
+        image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=900&q=80',
+        uk: {
           categoryLabel: 'Тераси зі склом',
-          title: 'Тераса біля озера з панорамним склінням',
-          materials: 'ДПК графіт + загартоване скло 10 мм на чорних стійках',
-          area: '64 м²',
-          time: '14 днів',
-          img: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1000&q=80',
-          desc: 'Проектування та монтаж просторої видової тераси на схилі біля озера. Використано преміальну композитну дошку сіро-графітового відтінку, посилений металокаркас та безрамні скляні секції з чорними алюмінієвими стійками і сходами.'
+          title: 'Видова тераса біля лісового озера',
+          desc: 'Проектування та будівництво дворівневої тераси на схилі. Використано зносостійку композитну дошку графітового відтінку та загартоване скло 10 мм на чорних матових стійках.',
+          specs: 'Матеріал: ДПК Преміум • Огорожа: Скло + Алюміній • Термін: 18 днів'
         },
-        {
-          id: 2,
-          category: 'glass',
+        es: {
+          categoryLabel: 'Terrazas con cristal',
+          title: 'Terraza panorámica frente al lago',
+          desc: 'Diseño y construcción de terraza en dos niveles sobre pendiente. Tarima composite de alta resistencia en tono grafito y vidrio templado de 10 mm con postes negro mate.',
+          specs: 'Material: WPC Premium • Barandilla: Vidrio + Aluminio • Plazo: 18 días'
+        },
+        en: {
+          categoryLabel: 'Glass Railings',
+          title: 'Panoramic Forest Lake Terrace',
+          desc: 'Design and construction of a two-tier hillside deck featuring durable graphite composite boards and 10 mm tempered glass panels on matte black posts.',
+          specs: 'Material: Premium WPC • Railing: Glass + Aluminum • Timeline: 18 days'
+        }
+      },
+      {
+        id: 2,
+        category: 'glass',
+        area: '44 м²',
+        image: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=900&q=80',
+        uk: {
           categoryLabel: 'Тераси зі склом',
-          title: 'Лісова тераса зі сходами та скляною балюстрадою',
-          materials: 'Повнотілий ДПК + тоноване скло та чорний метал',
-          area: '52 м²',
-          time: '12 днів',
-          img: 'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1000&q=80',
-          desc: 'Багаторівнева тераса з плавним спуском у лісову зону. Скляні огорожі зберігають візуальний простір та захищають від вітру, а металеві перила сходів забезпечують безпеку.'
+          title: 'Патіо-тераса зі скляним парапетом та сходами',
+          desc: 'Сучасна прибудинкова тераса з інтегрованим маршем сходів та комбінованою огорожею з металевого профілю і прозорого скла, що зберігає панораму саду.',
+          specs: 'Матеріал: ДПК Браш • Огорожа: Комбіноване скло • Термін: 14 днів'
         },
-        {
-          id: 3,
-          category: 'pergola',
+        es: {
+          categoryLabel: 'Terrazas con cristal',
+          title: 'Terraza patio con antepecho de cristal y escalera',
+          desc: 'Terraza moderna adosada a vivienda con escalera integrada y barandilla combinada de perfil metálico y vidrio transparente que preserva las vistas al jardín.',
+          specs: 'Material: WPC Cepillado • Barandilla: Vidrio combinado • Plazo: 14 días'
+        },
+        en: {
+          categoryLabel: 'Glass Railings',
+          title: 'Patio Deck with Glass Parapet & Stairs',
+          desc: 'Modern home-attached terrace with integrated stair flight and hybrid metal-and-glass balustrade preserving unobstructed garden views.',
+          specs: 'Material: Brushed WPC • Railing: Hybrid Glass • Timeline: 14 days'
+        }
+      },
+      {
+        id: 3,
+        category: 'pergola',
+        area: '65 м²',
+        image: 'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=900&q=80',
+        uk: {
           categoryLabel: 'Перголи',
-          title: 'Біокліматична пергола та лаунж-зона з термоясеня',
-          materials: 'Термоясен + алюмінієва пергола з LED-підсвіткою',
-          area: '48 м²',
-          time: '18 днів',
-          img: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1000&q=80',
-          desc: 'Сучасна зона відпочинку біля заміського будинку: настил із натурального термоясеня, алюмінієва пергола з регульованими ламелями та інтегроване вечірнє освітлення.'
+          title: 'Тераса з біокліматичною перголою',
+          desc: 'Архітектурна тераса з натурального термоясеня під алюмінієвою перголою з поворотними ламелями та інтегрованою вечірньою LED-підсвіткою.',
+          specs: 'Матеріал: Термоясен • Навіс: Біокліматична пергола • Термін: 24 дні'
         },
-        {
-          id: 4,
-          category: 'landscape',
+        es: {
+          categoryLabel: 'Pérgolas',
+          title: 'Terraza con pérgola bioclimática',
+          desc: 'Terraza arquitectónica de fresno termotratado bajo pérgola de aluminio con lamas orientables e iluminación nocturna LED integrada.',
+          specs: 'Material: Fresno termotratado • Cubierta: Pérgola bioclimática • Plazo: 24 días'
+        },
+        en: {
+          categoryLabel: 'Pergolas',
+          title: 'Terrace with Bioclimatic Pergola',
+          desc: 'Architectural thermo-ash deck sheltered by an aluminum louvered pergola with integrated warm evening LED lighting.',
+          specs: 'Material: Thermo-Ash • Canopy: Bioclimatic Pergola • Timeline: 24 days'
+        }
+      },
+      {
+        id: 4,
+        category: 'landscape',
+        area: '450 м²',
+        image: 'https://images.unsplash.com/photo-1558904541-efa843a96f01?auto=format&fit=crop&w=900&q=80',
+        uk: {
           categoryLabel: 'Ландшафт',
           title: 'Ландшафтний дизайн приватної резиденції',
-          materials: 'Крупноміри, рулонний газон, автополив Hunter, граніт',
-          area: '14 соток',
-          time: '25 днів',
-          img: 'https://images.unsplash.com/photo-1558904541-efa843a96f01?auto=format&fit=crop&w=1000&q=80',
-          desc: 'Комплексне благоустрій ділянки: геометричні доріжки з натурального каменю, багаторівневі міксбордери з хвойних та декоративних злаків, система автоматичного поливу та ландшафтна підсвітка.'
+          desc: 'Комплексний благоустрій території: терасування ділянки, покрокові доріжки з натурального каменю, декоративні злаки, хвойні композиції та автополив.',
+          specs: 'Площа ділянки: 4.5 сотки • Автополив Hunter • Термін: 30 днів'
         },
-        {
-          id: 5,
-          category: 'pergola',
-          categoryLabel: 'Перголи',
-          title: 'Дерев’яна пергола та тераса біля басейну',
-          materials: 'Модрина сибірська + брус клеєний',
-          area: '76 м²',
-          time: '16 днів',
-          img: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1000&q=80',
-          desc: 'Зона відпочинку навколо басейну з натуральної модрини, обробленої захисним маслом. Архітектурна пергола створює комфортну тінь у спекотні дні.'
+        es: {
+          categoryLabel: 'Paisajismo',
+          title: 'Diseño paisajístico de residencia privada',
+          desc: 'Acondicionamiento integral: abancalamiento del terreno, senderos de piedra natural, gramíneas ornamentales, coníferas y riego automático.',
+          specs: 'Superficie: 450 m² • Riego automático Hunter • Plazo: 30 días'
         },
-        {
-          id: 6,
-          category: 'landscape',
-          categoryLabel: 'Ландшафт',
-          title: 'Східний сад та вечірнє архітектурне освітлення',
-          materials: 'Декоративна відсипка, бонсаї, LED-світильники 2700K',
-          area: '8 соток',
-          time: '15 днів',
-          img: 'https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?auto=format&fit=crop&w=1000&q=80',
-          desc: 'Створення камерної атмосфери на прибудинковій території із застосуванням багаторічних рослин, природного каменю та теплого сценарію нічного освітлення.'
+        en: {
+          categoryLabel: 'Landscape',
+          title: 'Private Residence Landscape Design',
+          desc: 'Comprehensive estate landscaping: terrain terracing, natural stone stepping paths, ornamental grasses, evergreens, and automated irrigation.',
+          specs: 'Plot Area: 450 m² • Hunter Irrigation • Timeline: 30 days'
         }
-      ];
+      },
+      {
+        id: 5,
+        category: 'landscape',
+        area: '82 м²',
+        image: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=900&q=80',
+        uk: {
+          categoryLabel: 'Ландшафт',
+          title: 'Тераса навколо басейну та лаунж-зона',
+          desc: 'Безпечний нековзкий настил навколо басейну з прихованим кріпленням, душовою стійкою та ландшафтним озелененням периметру.',
+          specs: 'Матеріал: ДПК Co-extrusion • Прихований монтаж • Термін: 16 днів'
+        },
+        es: {
+          categoryLabel: 'Paisajismo',
+          title: 'Tarima de piscina y zona lounge',
+          desc: 'Pavimento antideslizante seguro alrededor de la piscina con fijación oculta, ducha exterior y ajardinamiento perimetral.',
+          specs: 'Material: WPC Co-extrusión • Fijación oculta • Plazo: 16 días'
+        },
+        en: {
+          categoryLabel: 'Landscape',
+          title: 'Poolside Deck & Lounge Zone',
+          desc: 'Slip-resistant poolside decking with concealed fasteners, outdoor shower column, and lush perimeter landscaping.',
+          specs: 'Material: Co-extrusion WPC • Hidden Fasteners • Timeline: 16 days'
+        }
+      },
+      {
+        id: 6,
+        category: 'pergola',
+        area: '48 м²',
+        image: 'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=900&q=80',
+        uk: {
+          categoryLabel: 'Перголи',
+          title: 'Літня кухня та барбекю-тераса',
+          desc: 'Проектування та реалізація критої зони відпочинку з дерев’яною перголою, стільницею з керамограніту та вогнищевою чашею.',
+          specs: 'Матеріал: Модрина + Метал • Зона BBQ • Термін: 21 день'
+        },
+        es: {
+          categoryLabel: 'Pérgolas',
+          title: 'Cocina de verano y terraza barbacoa',
+          desc: 'Diseño y ejecución de zona chill-out cubierta con pérgola de madera, encimera de gres porcelánico y área de fuego.',
+          specs: 'Material: Alerce + Metal • Zona BBQ • Plazo: 21 días'
+        },
+        en: {
+          categoryLabel: 'Pergolas',
+          title: 'Summer Kitchen & BBQ Terrace',
+          desc: 'Design and build of a covered lounge featuring a timber pergola, porcelain countertop, and sunken fire-pit.',
+          specs: 'Material: Larch + Steel • BBQ Area • Timeline: 21 days'
+        }
+      }
+    ];
 
-      const projectsGrid = document.getElementById('projects-grid');
-      const filterBtns = document.querySelectorAll('.filter-btn');
+    // Mobile Menu Toggle
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const iconOpen = document.getElementById('menu-icon-open');
+    const iconClose = document.getElementById('menu-icon-close');
 
-      // Render Projects Function
-      function renderProjects(filter = 'all') {
-        const filtered = filter === 'all' ? projects : projects.filter(p => p.category === filter);
-        projectsGrid.innerHTML = filtered.map(project => `
-          <article class="group bg-white rounded-3xl overflow-hidden border border-stone-200/80 shadow-card hover:shadow-soft transition-all duration-300 flex flex-col justify-between cursor-pointer" data-id="${project.id}">
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+      iconOpen.classList.toggle('hidden');
+      iconClose.classList.toggle('hidden');
+    });
+
+    document.querySelectorAll('.mobile-link').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+        iconOpen.classList.remove('hidden');
+        iconClose.classList.add('hidden');
+      });
+    });
+
+    // Portfolio Rendering & Filtering
+    const projectsGrid = document.getElementById('projects-grid');
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    let currentFilter = 'all';
+
+    function renderProjects(filter = 'all') {
+      currentFilter = filter;
+      const filtered = filter === 'all'
+        ? projectsData
+        : projectsData.filter(p => p.category === filter);
+
+      projectsGrid.innerHTML = filtered.map(project => {
+        const localized = project[currentLang];
+        return `
+        <article onclick="openProjectModal(${project.id})" class="group cursor-pointer bg-white rounded-3xl overflow-hidden border border-stone-200/80 shadow-card hover:shadow-soft transition-all duration-300 flex flex-col">
+          <div class="relative aspect-[4/3] overflow-hidden bg-forest-800">
+            <img
+              src="${project.image}"
+              onerror="this.onerror=null;this.src='https://placehold.co/800x600/1C2520/F8F7F4?text=ALEXBAR+Project';"
+              alt="${localized.title}"
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+            />
+            <div class="absolute top-4 left-4 px-3.5 py-1.5 rounded-full glass-dark text-white text-xs font-semibold">
+              ${localized.categoryLabel}
+            </div>
+            <div class="absolute bottom-4 right-4 px-3 py-1 rounded-lg bg-white/95 text-forest-800 text-xs font-bold shadow-sm">
+              ${project.area}
+            </div>
+          </div>
+          <div class="p-6 flex-1 flex flex-col justify-between">
             <div>
-              <div class="relative aspect-[4/3] overflow-hidden bg-forest-800">
-                <img
-                  src="${project.img}"
-                  onerror="this.onerror=null;this.src='https://placehold.co/800x600/1C2520/F8F7F4?text=ALEXBAR+Project';"
-                  alt="${project.title}"
-                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                />
-                <span class="absolute top-4 left-4 px-3.5 py-1.5 rounded-xl glass-dark text-stone-50 text-xs font-semibold">
-                  ${project.categoryLabel}
-                </span>
-              </div>
-              <div class="p-6">
-                <h3 class="font-serif text-2xl font-bold text-forest-800 group-hover:text-wood-dark transition-colors">
-                  ${project.title}
-                </h3>
-                <p class="text-xs text-slate-500 mt-2 font-medium">
-                  Матеріали: <span class="text-slate-800">${project.materials}</span>
-                </p>
-              </div>
+              <h3 class="font-serif text-2xl font-bold text-forest-800 group-hover:text-wood-dark transition-colors">
+                ${localized.title}
+              </h3>
+              <p class="text-sm text-slate-600 mt-2 line-clamp-2 leading-relaxed">
+                ${localized.desc}
+              </p>
             </div>
-            <div class="px-6 pb-6 pt-3 border-t border-stone-100 flex items-center justify-between text-xs font-semibold text-forest-800">
-              <div class="flex items-center gap-4">
-                <span>Площа: <strong>${project.area}</strong></span>
-                <span>Термін: <strong>${project.time}</strong></span>
-              </div>
-              <span class="text-wood-dark group-hover:translate-x-1 transition-transform">Оглянути →</span>
+            <div class="pt-4 mt-5 border-t border-stone-100 flex items-center justify-between text-xs font-semibold text-wood-dark">
+              <span>${localized.specs.split('•')[0]}</span>
+              <span class="group-hover:translate-x-1 transition-transform">→</span>
             </div>
-          </article>
-        `).join('');
+          </div>
+        </article>
+      `}).join('');
+    }
 
-        // Attach click listeners to open lightbox
-        document.querySelectorAll('#projects-grid article').forEach(card => {
-          card.addEventListener('click', () => {
-            const projectId = Number(card.getAttribute('data-id'));
-            const item = projects.find(p => p.id === projectId);
-            if (item) openModal(item);
-          });
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => {
+          b.classList.remove('bg-forest-800', 'text-stone-50', 'active');
+          b.classList.add('bg-stone-200/70', 'text-slate-700');
         });
-      }
-
-      renderProjects('all');
-
-      // Filter Button Clicks
-      filterBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-          filterBtns.forEach(b => {
-            b.classList.remove('bg-forest-800', 'text-stone-50');
-            b.classList.add('bg-stone-200/70', 'text-slate-700');
-          });
-          btn.classList.remove('bg-stone-200/70', 'text-slate-700');
-          btn.classList.add('bg-forest-800', 'text-stone-50');
-          renderProjects(btn.getAttribute('data-filter'));
-        });
+        btn.classList.add('bg-forest-800', 'text-stone-50', 'active');
+        btn.classList.remove('bg-stone-200/70', 'text-slate-700');
+        renderProjects(btn.dataset.filter);
       });
+    });
 
-      // 2. Lightbox Modal Logic
-      const modal = document.getElementById('project-modal');
-      const closeModalBtn = document.getElementById('close-modal');
-      const modalOrderBtn = document.getElementById('modal-order-btn');
+    // Lightbox Modal Logic
+    const modal = document.getElementById('project-modal');
+    const modalClose = document.getElementById('modal-close');
+    const modalCalcCta = document.getElementById('modal-calc-cta');
 
-      function openModal(project) {
-        document.getElementById('modal-img').src = project.img;
-        document.getElementById('modal-img').alt = project.title;
-        document.getElementById('modal-category').textContent = project.categoryLabel;
-        document.getElementById('modal-title').textContent = project.title;
-        document.getElementById('modal-desc').textContent = project.desc;
-        document.getElementById('modal-materials').textContent = project.materials;
-        document.getElementById('modal-area').textContent = project.area;
-        document.getElementById('modal-time').textContent = project.time;
+    window.openProjectModal = function(id) {
+      const p = projectsData.find(item => item.id === id);
+      if (!p) return;
+      const localized = p[currentLang];
+      document.getElementById('modal-img').src = p.image;
+      document.getElementById('modal-category').textContent = localized.categoryLabel;
+      document.getElementById('modal-area').textContent = p.area;
+      document.getElementById('modal-title').textContent = localized.title;
+      document.getElementById('modal-desc').textContent = localized.desc;
+      document.getElementById('modal-specs').textContent = localized.specs;
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    };
 
-        modal.classList.remove('hidden');
-        modal.classList.add('flex');
-        document.body.style.overflow = 'hidden';
-      }
+    function closeProjectModal() {
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
 
-      function closeModal() {
-        modal.classList.add('hidden');
-        modal.classList.remove('flex');
-        document.body.style.overflow = '';
-      }
+    modalClose.addEventListener('click', closeProjectModal);
+    modalCalcCta.addEventListener('click', closeProjectModal);
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) closeProjectModal();
+    });
 
-      closeModalBtn.addEventListener('click', closeModal);
-      modal.addEventListener('click', (e) => {
-        if (e.target === modal) closeModal();
-      });
-      modalOrderBtn.addEventListener('click', () => {
-        const title = document.getElementById('modal-title').textContent;
-        closeModal();
-        document.getElementById('contact-message').value = `Цікавить аналогічний проект: "${title}"`;
-        document.getElementById('contacts').scrollIntoView({ behavior: 'smooth' });
-      });
+    // Interactive Cost Calculator Logic (€ Euro)
+    const areaSlider = document.getElementById('area-slider');
+    const areaValue = document.getElementById('area-value');
+    const materialBtns = document.querySelectorAll('.calc-material');
+    const railingBtns = document.querySelectorAll('.calc-railing');
+    const extraCheckboxes = document.querySelectorAll('.calc-extra');
 
-      // 3. Interactive Terrace Cost Calculator Logic
-      const areaSlider = document.getElementById('area-slider');
-      const areaValue = document.getElementById('area-value');
-      const materialBtns = document.querySelectorAll('.calc-material');
-      const railingBtns = document.querySelectorAll('.calc-railing');
-      const extraCheckboxes = document.querySelectorAll('.calc-extra');
+    let selectedMaterialPrice = 235;
+    let selectedMaterialKey = 'mat_wpc';
+    let selectedRailingPrice = 315;
+    let selectedRailingKey = 'rail_glass';
 
-      let calcState = {
-        area: 42,
-        materialPrice: 235,
-        materialName: 'ДПК Композит',
-        railingPrice: 45,
-        railingName: 'Скляна на чорних стійках'
-      };
+    function updateCalculator() {
+      const t = translations[currentLang];
+      const area = parseInt(areaSlider.value, 10);
+      areaValue.textContent = area;
 
-      function updateCalculator() {
-        const area = Number(areaSlider.value);
-        calcState.area = area;
-        areaValue.textContent = area;
-
-        let extrasTotal = 0;
-        let extraLabels = [];
-        extraCheckboxes.forEach(cb => {
-          if (cb.checked) {
-            extrasTotal += Number(cb.value);
-            extraLabels.push(cb.getAttribute('data-label'));
-          }
-        });
-
-        const total = (area * (calcState.materialPrice + calcState.railingPrice)) + extrasTotal;
-
-        document.getElementById('total-price').textContent = '$' + total.toLocaleString('uk-UA');
-        document.getElementById('summary-area').textContent = `${area} м²`;
-        document.getElementById('summary-material').textContent = calcState.materialName;
-        document.getElementById('summary-railing').textContent = calcState.railingName;
-        document.getElementById('summary-extras').textContent = extraLabels.length ? extraLabels.join(', ') : 'Без додаткових опцій';
-      }
-
-      areaSlider.addEventListener('input', updateCalculator);
-
-      materialBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-          materialBtns.forEach(b => {
-            b.classList.remove('border-forest-800', 'bg-stone-100');
-            b.classList.add('border-stone-200', 'bg-white');
-          });
-          btn.classList.remove('border-stone-200', 'bg-white');
-          btn.classList.add('border-forest-800', 'bg-stone-100');
-
-          calcState.materialPrice = Number(btn.getAttribute('data-price'));
-          calcState.materialName = btn.getAttribute('data-name');
-          updateCalculator();
-        });
-      });
-
-      railingBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-          railingBtns.forEach(b => {
-            b.classList.remove('border-forest-800', 'bg-stone-100');
-            b.classList.add('border-stone-200', 'bg-white');
-          });
-          btn.classList.remove('border-stone-200', 'bg-white');
-          btn.classList.add('border-forest-800', 'bg-stone-100');
-
-          calcState.railingPrice = Number(btn.getAttribute('data-price'));
-          calcState.railingName = btn.getAttribute('data-name');
-          updateCalculator();
-        });
-      });
+      let extrasTotal = 0;
+      const selectedExtraLabels = [];
 
       extraCheckboxes.forEach(cb => {
-        cb.addEventListener('change', updateCalculator);
+        if (cb.checked) {
+          extrasTotal += parseInt(cb.value, 10);
+          const key = cb.dataset.extraKey;
+          selectedExtraLabels.push(t[key + '_short']);
+        }
       });
 
-      updateCalculator();
+      const total = (area * (selectedMaterialPrice + selectedRailingPrice)) + extrasTotal;
 
-      // 4. Toast Notification Helper
-      const toast = document.getElementById('toast');
-      let toastTimeout;
+      document.getElementById('total-price').textContent = '€' + total.toLocaleString('uk-UA');
+      document.getElementById('summary-area').textContent = area + ' ' + t.unit_sqm;
+      document.getElementById('summary-material').textContent = t[selectedMaterialKey + '_name'];
+      document.getElementById('summary-railing').textContent = selectedRailingKey === 'rail_glass'
+        ? t.rail_glass_summary
+        : t[selectedRailingKey + '_name'];
+      document.getElementById('summary-extras').textContent = selectedExtraLabels.length > 0
+        ? selectedExtraLabels.join(', ')
+        : t.ext_none;
+    }
 
-      function showToast(title, body) {
-        document.getElementById('toast-title').textContent = title;
-        document.getElementById('toast-body').textContent = body;
-        toast.classList.remove('translate-y-24', 'opacity-0', 'pointer-events-none');
-        clearTimeout(toastTimeout);
-        toastTimeout = setTimeout(() => {
-          toast.classList.add('translate-y-24', 'opacity-0', 'pointer-events-none');
-        }, 5000);
-      }
+    areaSlider.addEventListener('input', updateCalculator);
 
-      // Calculator Form Submission
-      document.getElementById('calc-form').addEventListener('submit', (e) => {
-        e.preventDefault();
-        const name = document.getElementById('calc-name').value.trim();
-        const total = document.getElementById('total-price').textContent;
-        showToast(
-          `Дякуємо, ${name}!`,
-          `Розрахунок (${calcState.area} м², ${calcState.materialName}, ${total}) прийнято. Інженер ALEXBAR зателефонує вам для уточнення деталей.`
-        );
-        e.target.reset();
-      });
-
-      // Contact Form Submission
-      document.getElementById('contact-form').addEventListener('submit', (e) => {
-        e.preventDefault();
-        const name = document.getElementById('contact-name').value.trim();
-        showToast(
-          `Заявку прийнято, ${name}!`,
-          'Ми зв’яжемося з вами за вказаним номером протягом 30 хвилин.'
-        );
-        e.target.reset();
-      });
-
-      // 5. Mobile Menu Toggle
-      const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-      const mobileMenu = document.getElementById('mobile-menu');
-      const iconOpen = document.getElementById('menu-icon-open');
-      const iconClose = document.getElementById('menu-icon-close');
-
-      function toggleMobileMenu() {
-        const isHidden = mobileMenu.classList.contains('hidden');
-        mobileMenu.classList.toggle('hidden', !isHidden);
-        iconOpen.classList.toggle('hidden', isHidden);
-        iconClose.classList.toggle('hidden', !isHidden);
-      }
-
-      mobileMenuBtn.addEventListener('click', toggleMobileMenu);
-      document.querySelectorAll('.mobile-link').forEach(link => {
-        link.addEventListener('click', () => {
-          if (!mobileMenu.classList.contains('hidden')) toggleMobileMenu();
+    materialBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        materialBtns.forEach(b => {
+          b.classList.remove('border-forest-800', 'bg-stone-100', 'active');
+          b.classList.add('border-stone-200', 'bg-white');
         });
+        btn.classList.add('border-forest-800', 'bg-stone-100', 'active');
+        btn.classList.remove('border-stone-200', 'bg-white');
+        selectedMaterialPrice = parseInt(btn.dataset.price, 10);
+        selectedMaterialKey = btn.dataset.matKey;
+        updateCalculator();
       });
-
-      // 6. Scroll Reveal Observer
-      const revealElements = document.querySelectorAll('.reveal');
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            observer.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.12 });
-
-      revealElements.forEach(el => observer.observe(el));
     });
+
+    railingBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        railingBtns.forEach(b => {
+          b.classList.remove('border-forest-800', 'bg-stone-100', 'active');
+          b.classList.add('border-stone-200', 'bg-white');
+        });
+        btn.classList.add('border-forest-800', 'bg-stone-100', 'active');
+        btn.classList.remove('border-stone-200', 'bg-white');
+        selectedRailingPrice = parseInt(btn.dataset.price, 10);
+        selectedRailingKey = btn.dataset.railKey;
+        updateCalculator();
+      });
+    });
+
+    extraCheckboxes.forEach(cb => {
+      cb.addEventListener('change', updateCalculator);
+    });
+
+    // Language Switcher Function
+    const langBtns = document.querySelectorAll('.lang-btn');
+
+    function setLanguage(lang) {
+      if (!translations[lang]) return;
+      currentLang = lang;
+      const t = translations[lang];
+
+      document.documentElement.lang = lang;
+      document.title = t.page_title;
+
+      // Update active state on all language switcher buttons
+      langBtns.forEach(btn => {
+        if (btn.dataset.lang === lang) {
+          btn.classList.add('bg-forest-800', 'text-stone-50');
+          btn.classList.remove('text-slate-700');
+        } else {
+          btn.classList.remove('bg-forest-800', 'text-stone-50');
+          btn.classList.add('text-slate-700');
+        }
+      });
+
+      // Translate static text & HTML nodes
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (t[key] !== undefined) {
+          el.innerHTML = t[key];
+        }
+      });
+
+      // Translate placeholders
+      document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+        const key = el.getAttribute('data-i18n-placeholder');
+        if (t[key] !== undefined) {
+          el.setAttribute('placeholder', t[key]);
+        }
+      });
+
+      // Re-render portfolio & calculator summary in selected language
+      renderProjects(currentFilter);
+      updateCalculator();
+    }
+
+    langBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        setLanguage(btn.dataset.lang);
+      });
+    });
+
+    // Initial Render
+    renderProjects('all');
+    updateCalculator();
+
+    // Form Submissions with Toast Feedback
+    const toast = document.getElementById('toast');
+    function showToast() {
+      toast.classList.remove('translate-y-24', 'opacity-0');
+      setTimeout(() => {
+        toast.classList.add('translate-y-24', 'opacity-0');
+      }, 4500);
+    }
+
+    document.getElementById('calc-lead-form').addEventListener('submit', (e) => {
+      e.preventDefault();
+      e.target.reset();
+      showToast();
+    });
+
+    document.getElementById('contact-form').addEventListener('submit', (e) => {
+      e.preventDefault();
+      e.target.reset();
+      showToast();
+    });
+
+    // Scroll Reveal Observer
+    const revealElements = document.querySelectorAll('.reveal');
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    revealElements.forEach(el => revealObserver.observe(el));
   </script>
 </body>
 </html>
